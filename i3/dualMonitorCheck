@@ -1,0 +1,4 @@
+if [ $DESKTOP_SESSION == "i3" ]
+then
+	xrandr --output DFP1 --auto --left-of DFP2
+fi

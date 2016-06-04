@@ -1,0 +1,11 @@
+[user]
+	email = zamicol@gmail.com
+	name = Zach Collier
+[credential]
+	helper = cache --timeout=360000
+[url "https://"]
+	insteadOf = git://
+[push]
+	default = simple
+[http]
+	cookiefile = /home/z/.gitcookies
