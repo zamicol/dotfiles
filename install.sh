@@ -87,7 +87,7 @@ done
 #Make sure .bashrc is being used by the current shell environment
 ################
 source ~/.bashrc
-
+source ~/.profile
 
 ###########
 ##ssh
