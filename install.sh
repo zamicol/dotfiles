@@ -17,6 +17,9 @@ PACKAGES="git vim curl openssh-server lynx htop"
 ##Bloat packages
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 
+##linux mint
+PACKAGES="$PACKAGES caja-share"
+
 ##Dev packages
 PACKAGES="$PACKAGES golang atom"
 
