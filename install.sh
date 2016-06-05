@@ -12,7 +12,7 @@ REPOS="ppa:ubuntu-lxc/lxd-stable ppa:webupd8team/atom"
 
 #Packages to be installed on the system.
 #Some of these are needed for this script,
-PACKAGES="git vim curl openssh-server lynx htop"
+PACKAGES="git vim curl openssh-server lynx htop tmux"
 
 ##Bloat packages
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
