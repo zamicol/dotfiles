@@ -35,7 +35,7 @@ SYMLINKS="bashrc xsession profile xinitrc gitconfig"
 ##Dirs
 ############
 #Make sure dev exists with go dir.
-mkdir ~/dev/go
+mkdir -p ~/dev/go
 
 
 ############
