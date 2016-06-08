@@ -27,5 +27,6 @@ fi
 xmodmap ~/.dotfiles/xmodmap
 
 export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
 #$GOPATH must not be set to $GOROOT
 #export GOROOT=$HOME/dev/go
