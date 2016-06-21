@@ -188,6 +188,8 @@ fi
 #################
 ##golang
 ################
+#Golang gets installed via repo
+#Golang's src on Debian is located at /usr/lib/go/src
 echo "Golang"
 #$GOPATH should be set in .profile
 echo "gopath: $GOPATH"
