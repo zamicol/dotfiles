@@ -17,6 +17,9 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 ##Bloat packages
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 
+#i3
+PACKAGES="$PACKAGES i3 dmenu"
+
 ##linux mint
 PACKAGES="$PACKAGES caja-share"
 
