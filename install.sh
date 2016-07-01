@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 ############
 ##Variables
 ############
@@ -8,10 +7,12 @@
 DOTFILES=".dotfiles"
 
 ##Repos
+#lxd-stable has golang packages.
 REPOS="ppa:ubuntu-lxc/lxd-stable ppa:webupd8team/atom"
 
 #Packages to be installed on the system.
 #Some of these are needed for this script,
+#ncdu - cmd graphic directory size calc
 PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 
 ##Bloat packages
@@ -21,6 +22,7 @@ PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 PACKAGES="$PACKAGES i3 dmenu i3status"
 
 ##linux mint
+##caja-share is for smb gui sharing.
 PACKAGES="$PACKAGES caja-share"
 
 ##Dev packages
@@ -40,6 +42,23 @@ SYMLINKS="bashrc xsession profile xinitrc gitconfig"
 #Make sure dev exists with go dir.
 mkdir -p ~/dev/go
 
+############
+##symlinks
+############
+for link in $SYMLINKS; do
+    if [ ! -f ~/.$link ]; then
+	ln -s ~/$DOTFILES/$link ~/.$link
+	echo "added ~/.$link."
+    else
+	echo ".$link exists.  Not creating symbolic link."
+    fi
+done
+
+################
+#Make sure .bashrc is being used by the current shell environment
+################
+source ~/.bashrc
+source ~/.profile
 
 ############
 ##Repos
@@ -73,24 +92,21 @@ case $(uname -s) in
 esac
 
 
-############
-##symlinks
-############
-for link in $SYMLINKS; do
-    if [ ! -f ~/.$link ]; then
-	ln -s ~/$DOTFILES/$link ~/.$link
-	echo "added ~/.$link."
-    else
-	echo ".$link exists.  Not creating symbolic link."
-    fi
-done
+###########
+##i3
+###########
+mkdir ~/.i3
+#remove default config
+# and link to dotfile config
+rm ~/.i3/config
+ln -s ~/$DOTFILES/i3/config ~/.i3/config
+#i3status
+#config folder
+mkdir ~/.config/i3status
+#this config should read first before the "defualt" /etc/i3status.conf
+#accodring to https://i3wm.org/i3status/manpage.html
+ln -s ~/$DOTFILES/i3/i3status.conf ~/.config/i3status/config
 
-
-################
-#Make sure .bashrc is being used by the current shell environment
-################
-source ~/.bashrc
-source ~/.profile
 
 ###########
 ##ssh
@@ -104,6 +120,7 @@ fi
 if [ ! -f ~/.ssh/authorized_keys ]; then
   cp ~/$DOTFILES/authorized_keys ~/.ssh/authorized_keys
 fi
+
 
 #############
 ##Quicktile

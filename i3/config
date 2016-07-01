@@ -149,9 +149,18 @@ bar {
         status_command i3status
 }
 
-#fake-outputs 3840x1080+0+0
+##########
+##Custom z
+#########
 
-#exec dualMonitorCheck 
-exec --no-startup-id ~/.i3/dualMonitorCheck 
-exec dualMonitorCheck
-exec_always ~/./i3/dualMonitorCheck
+#Next Workspace
+#TODO
+#Get the following working with Control+Alt.  Alt is not working, but Control will
+#bindsym Control+Alt+Right workspace next
+#bindsym Control+Alt+Left workspace prev
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
+
+
+#wifi icon
+exec --no-startup-id nm-applet
