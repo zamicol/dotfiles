@@ -164,3 +164,6 @@ bindsym $mod+Control+Left workspace prev
 
 #wifi icon
 exec --no-startup-id nm-applet
+
+#Sound icon
+exec --no-startup-id mate-volume-control-applet 
