@@ -19,7 +19,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 
 #i3
-PACKAGES="$PACKAGES i3 dmenu i3status"
+PACKAGES="$PACKAGES i3 dmenu i3status i3lock"
 
 ##linux mint
 ##caja-share is for smb gui sharing.
