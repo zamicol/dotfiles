@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#When possible, use XDG directory structure.
+
 ############
 ##Variables
 ############
@@ -95,11 +97,11 @@ esac
 ###########
 ##i3
 ###########
-mkdir ~/.i3
+mkdir ~/.config/i3
 #remove default config
 # and link to dotfile config
 rm ~/.i3/config
-ln -s ~/$DOTFILES/i3/config ~/.i3/config
+ln -s ~/$DOTFILES/i3/config ~/.config/i3/config
 #i3status
 #config folder
 mkdir ~/.config/i3status
