@@ -21,7 +21,8 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 
 #i3
-PACKAGES="$PACKAGES i3 dmenu i3status i3lock"
+#feh is for x desktop background.
+PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh"
 
 ##linux mint
 ##caja-share is for smb gui sharing.

@@ -176,10 +176,17 @@ bindsym $mod+slash exec amixer -D pulse set Master 1+ unmute && amixer set Maste
 bindsym $mod+period exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB-;exec amixer -D pulse set 'IEC958',0 1+ unmute && amixer set 'IEC958' 2dB-
 bindsym $mod+comma exec amixer -D pulse set Master 1+ toggle; exec amixer -D pulse set IEC958 1+ toggle
 
-
 #font
 font pango:DejaVu Sans Mono 14
 
 #Host specific settings.
 #For example, put monitor settings in here.
 exec ~/.dotfiles/i3/hosts.sh
+
+#screen lock
+#can also use i3lock
+bindsym $mod+Control+l exec mate-screensaver-command -l
+
+#Desktop background.
+#Picture taken from https://static.pexels.com/photos/792/wood-landscape-mountains-nature.jpg
+feh --bg-scale ~/.dotfiles/img/wood-landscape-mountains-nature.jpg
