@@ -185,8 +185,20 @@ exec ~/.dotfiles/i3/hosts.sh
 
 #screen lock
 #can also use i3lock
+#Start the deamon.
+exec --no-startup-id mate-screensaver
 bindsym $mod+Control+l exec mate-screensaver-command -l
 
 #Desktop background.
+#Sleep first so monitor setting have a chance to take affect first.
 #Picture taken from https://static.pexels.com/photos/792/wood-landscape-mountains-nature.jpg
-feh --bg-scale ~/.dotfiles/img/wood-landscape-mountains-nature.jpg
+exec --no-startup-id sleep 1 && feh --bg-scale ~/.dotfiles/img/wood-landscape-mountains-nature.jpg
+
+#################
+#App bindings
+################
+bindsym $mod+c exec google-chrome
+bindsym $mod+o exec chromium-browser
+bindsym $mod+m exec atom
+#xkill is currently not working.  
+bindsym $mod+x exec mate-terminal --command 'xkill' 
