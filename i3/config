@@ -198,7 +198,8 @@ exec --no-startup-id sleep 1 && feh --bg-scale ~/.dotfiles/img/wood-landscape-mo
 #App bindings
 ################
 bindsym $mod+c exec google-chrome
-bindsym $mod+o exec chromium-browser
+bindsym $mod+Control+c exec chromium-browser
+bindsym $mod+o exec gnome-calculator
 bindsym $mod+m exec atom
 bindsym --release $mod+x exec xkill
 bindsym --release $mod+z exec mate-screenshot -a 
