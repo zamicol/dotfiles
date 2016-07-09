@@ -192,7 +192,7 @@ bindsym $mod+Control+l exec mate-screensaver-command -l
 #Desktop background.
 #Sleep first so monitor setting have a chance to take affect first.
 #Picture taken from https://static.pexels.com/photos/792/wood-landscape-mountains-nature.jpg
-exec --no-startup-id sleep 1 && feh --bg-scale ~/.dotfiles/img/wood-landscape-mountains-nature.jpg
+exec --no-startup-id sleep 1 && feh --bg-scale ~/.dotfiles/Img/wood-landscape-mountains-nature.jpg
 
 #################
 #App bindings
