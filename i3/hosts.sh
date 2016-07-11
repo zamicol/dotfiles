@@ -12,5 +12,5 @@ if [[ $(hostname -s) = coll* ]]; then
   xrandr --output HDMI1 --auto --right-of DP2
 
 	#Remmina applet icon
-	remmina -i
+	remmina -i &
 fi
