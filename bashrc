@@ -16,6 +16,6 @@ alias getclip='xclip -selection clipboard -o'
 #push to all remotes, "multiple-push"
 alias mpush='git remote | xargs -L1 git push --all'
 
-#set default editor.  
+#set default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
