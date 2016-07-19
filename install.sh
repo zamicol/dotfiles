@@ -1,14 +1,19 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # When possible, use XDG directory structure.
+#To change look and feel, use lxappearance
 
 
 ###############
 ###############
-# Variables
+# Start
 ###############
 ###############
+# If using bash
+# -e Exit if errors
+# -u Exit if variable is unset
+#set -eu
 # Dotfiles directory
-DOTFILES="~/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
 # Set absolute path.  This is especially helpful for 'ln -s'.
 DOTFILES=`cd "$DOTFILES"; pwd`
 
@@ -43,7 +48,6 @@ PACKAGES="$PACKAGES golang atom"
 # QuickTile packages
 PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 
-
 ####################
 # Files
 ####################
@@ -52,7 +56,8 @@ PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 # Files with be prepended with a dot.
 SYMLINKS="bashrc xsession profile xinitrc gitconfig fonts"
 # Create these dirs if they do not yet exist.
-DIRS="~/dev/go ~/.config/i3 ~/.ssh ~/.config/i3status ~/.config/i3blocks"
+DIRS="$HOME/dev/go $HOME/.config/i3 $HOME/.ssh $HOME/.config/i3status \
+$HOME/.config/i3blocks $DOTFILES/fonts"
 
 
 ####################
@@ -64,21 +69,9 @@ DIRS="~/dev/go ~/.config/i3 ~/.ssh ~/.config/i3status ~/.config/i3blocks"
 ####################
 # Make sure .bashrc is being used by the current shell environment
 ####################
-source ~/.bashrc
-source ~/.profile
-
-################
-# Symlinks
-################
-for link in $SYMLINKS; do
-  if [ ! -f ~/.$link ] && [ ! -d ~/.$link ]; then
-    ln -s $DOTFILES/$link ~/.$link
-    echo "Created link ~/.$link from $DOTFILES"
-  else
-    echo ".$link exists.  Not creating symbolic link."
-  fi
-done
-
+#use "source" in bash
+. $HOME/.bashrc
+. $HOME/.profile
 
 ####################
 # mkdirs
@@ -86,6 +79,20 @@ done
 for dir in $DIRS; do
   mkdir -p $dir
 done
+
+################
+# Symlinks
+################
+for link in $SYMLINKS; do
+  if [ ! -f $HOME/.$link ] && [ ! -d $HOME/.$link ]; then
+    if ln -s $DOTFILES/$link $HOME/.$link ; then
+      echo "Created link $HOME/.$link from $DOTFILES"
+    fi
+  else
+      echo ".$link exists.  Not creating symbolic link."
+  fi
+done
+
 
 ####################
 # Repos
@@ -95,7 +102,7 @@ for r in $REPOS; do
   sudo add-apt-repository $r -y
 done
 # Update packages that are now available
-sudo apt-get update
+#sudo apt-get update
 
 
 ####################
@@ -123,41 +130,44 @@ esac
 # i3
 ####################
 # Remove default config and link to dotfile config
-rm ~/.i3/config
-ln -s $DOTFILES/i3/config ~/.config/i3/config
+rm $HOME/.i3/config
+ln -s $DOTFILES/i3/config $HOME/.config/i3/config
 
 # i3status and i3block
 # this config should read first before the "default" /etc/i3status.conf
 # accodring to https://i3wm.org/i3status/manpage.html and
 # https://vivien.github.io/i3blocks/
-ln -s $DOTFILES/i3/i3status.conf ~/.config/i3status/config
-ln -s $DOTFILES/i3/i3blocks.conf ~/.config/i3blocks/config
+ln -s $DOTFILES/i3/i3status.conf $HOME/.config/i3status/config
+ln -s $DOTFILES/i3/i3blocks.conf $HOME/.config/i3blocks/config
+# i3blocks
+git clone git://github.com/vivien/i3blocks $HOME/dev/i3blocks
+(cd $HOME/dev/i3blocks/ && make clean debug && sudo make install)
 
 
 ####################
 # ssh
 ####################
 echo "Setting up ssh"
-if [ ! -d ~/.ssh ]; then
-  chmod 700 ~/.ssh
-  ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+if [ ! -d $HOME/.ssh ]; then
+  chmod 700 $HOME/.ssh
+  ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
 fi
-if [ ! -f ~/.ssh/authorized_keys ]; then
-  cp $DOTFILES/authorized_keys ~/.ssh/authorized_keys
+if [ ! -f $HOME/.ssh/authorized_keys ]; then
+  cp $DOTFILES/authorized_keys $HOME/.ssh/authorized_keys
 fi
 
 
 ###############
 # Quicktile
 ###############
-if [ ! -f ~/.config/quicktile.cfg ]; then
+if [ ! -f $HOME/.config/quicktile.cfg ]; then
   echo "Installing Quicktile"
   git clone https://github.com/ssokolow/quicktile.git
   cd quicktile
   sudo ./setup.py install
   cd ..
 else
-  echo "~/.config/quicktile.cfg exists.  Not installing quicktile"
+  echo "$HOME/.config/quicktile.cfg exists.  Not installing quicktile"
 fi
 
 
@@ -165,7 +175,7 @@ fi
 # Fonts
 ####################
 # -N update only on new, -P specify directory, and -q is quiet
-wget -Nq -P ~/.fonts/ \
+wget -Nq -P $HOME/.fonts/ \
 https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Bold.ttf  \
 https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Regular.ttf \
 https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Thin.ttf \
@@ -179,21 +189,21 @@ https://github.com/FortAwesome/Font-Awesome/raw/master/fonts/fontawesome-webfont
 # vim's settings are stored in the home directory
 if [ ! -d "$HOME/.vim" ]; then
   echo 'Cloning vim'
-  git clone git://github.com/Zamicol/dotvim.git ~/.vim
+  git clone git://github.com/Zamicol/dotvim.git $HOME/.vim
   if (( $? != 0 )); then
     # Port blocked?  Try https
     echo 'attempting clone via https'
-    git clone https://github.com/Zamicol/dotvim.git ~/.vim
+    git clone https://github.com/Zamicol/dotvim.git $HOME/.vim
   fi
 
   if (( $? == 0 )); then
-    echo 'cloned vim to ~/.vim'
-    cd ~/.vim
+    echo 'cloned vim to $HOME/.vim'
+    cd $HOME/.vim
     git submodule init
     git submodule update
     # create symbolic link in home so vim can see the settings
-    if [ ! -f ~/.vimrc ]; then
-      ln -s ~/.vim/vimrc ~/.vimrc
+    if [ ! -f $HOME/.vimrc ]; then
+      ln -s $HOME/.vim/vimrc $HOME/.vimrc
     else
       echo '.vimrc exists.  Not creating symbolic link'
     fi
@@ -211,13 +221,13 @@ if [ ! -d "$HOME/.emacs.d" ]; then
   # All settings should be stored in the personal directory
   # so it is easy to merge from the main project.
   # git clone https://github.com/Zamicol/prelude.git prelude
-  # ln -s  	~/$DOTFILES/prelude ~/.emacs.d
+  # ln -s  	$HOME/$DOTFILES/prelude $HOME/.emacs.d
   # echo 'installed emacs prelude'i
 
   # zami's plain jane emacs repo.
   # emacs should initialize everything else on first run.
-  git clone https://github.com/Zamicol/emacs.git ~/.emacs.d
-  echo 'cloned emacs to ~/.emacs.d'
+  git clone https://github.com/Zamicol/emacs.git $HOME/.emacs.d
+  echo 'cloned emacs to $HOME/.emacs.d'
 else
   echo '.emacs.d exists.  Not cloning emacs'
 fi
