@@ -144,9 +144,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-###############
-##Custom z
-##############
+####################
+# Custom z
+####################
+#
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -158,59 +159,58 @@ bar {
     colors {
     #background #000D1A
     #background #07485F
-    #medium blue
+    # medium blue
     background #07495F
-    #light gray
+    # light gray
     #background #E5E5E6
     statusline #FFFFFF
     #statusline #10ABE1
     }
 }
 
-#font
+# Font
 font pango:System San Francisco Display, FontAwesome 12
 
-#Next Workspace
+# Next Workspace
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 
-#sound
+# Sound
 # Volume controls
 bindsym $mod+slash exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB+
 bindsym $mod+period exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB-
 bindsym $mod+comma exec amixer -D pulse set Master 1+ toggle
 
-
-
-#Host specific settings.caja
-#For example, put monitor settings in here.
+# Host specific settings.caja
+# For example, put monitor settings in here.
 exec ~/.dotfiles/i3/hosts.sh
 
-#screen lock
-#can also use i3lock
-#Start the deamon.
+# Screen lock
+# can also use i3lock
+# Start the deamon, then bind.
 exec --no-startup-id mate-screensaver
 bindsym $mod+Control+l exec mate-screensaver-command -l
 
-#Desktop background.
-#Sleep first so monitor setting have a chance to take affect first.
-#Picture taken from https://static.pexels.com/photos/792/wood-landscape-mountains-nature.jpg
-exec --no-startup-id sleep 1 && feh --bg-scale ~/.dotfiles/Img/wood-landscape-mountains-nature.jpg
+# Desktop background.
+# Sleep first so monitor setting have a chance to take affect first.
+# Picture taken from https://static.pexels.com/photos/792/wood-landscape-mountains-nature.jpg
+exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/Img/wood-landscape-mountains-nature.jpg
 
-#################
-#Applets and Icons
-################
-#wifi icon
+####################
+# Applets and Icons
+####################
+# wifi icon
 exec --no-startup-id nm-applet
-#Sound icon
-#Example: exec --no-startup-id mate-volume-control-applet
-#Remove the --no-startup-id for it to appear on all workspaces.
+# Sound icon
+# Example: exec --no-startup-id mate-volume-control-applet
+# Supposidly remove the --no-startup-id for it to appear on all workspaces
+# but doesn't seem to work.
 exec mate-volume-control-applet
 
 
-#################
-#App bindings
-################
+####################
+# App bindings
+####################
 bindsym $mod+c exec google-chrome
 bindsym $mod+Control+c exec chromium-browser
 bindsym $mod+o exec gnome-calculator
