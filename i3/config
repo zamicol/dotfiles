@@ -154,9 +154,9 @@ bar {
   #status_command i3status
   status_command SCRIPT_DIR=/usr/local/libexec/i3blocks i3blocks
   font pango:System San Francisco Display, FontAwesome 10
-
+  position top
   tray_output primary
-    colors {
+  colors {
     #background #000D1A
     #background #07485F
     # medium blue
@@ -165,7 +165,7 @@ bar {
     #background #E5E5E6
     statusline #FFFFFF
     #statusline #10ABE1
-    }
+  }
 }
 
 # Font
