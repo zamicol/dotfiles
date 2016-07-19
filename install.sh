@@ -30,7 +30,8 @@ PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 
 #i3
 #feh is for x desktop background.
-PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh"
+#sysstat is for i3blocks cpu stats
+PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat"
 
 ##linux mint
 ##caja-share is for smb gui sharing.
@@ -51,7 +52,7 @@ PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 #Files with be prepended with a dot.
 SYMLINKS="bashrc xsession profile xinitrc gitconfig fonts"
 #Create these dirs if they do not yet exist.
-DIRS="~/dev/go ~/.config/i3 ~/.ssh ~/.config/i3status"
+DIRS="~/dev/go ~/.config/i3 ~/.ssh ~/.config/i3status ~/.config/i3blocks"
 
 
 ###############
@@ -97,9 +98,9 @@ done
 sudo apt-get update
 
 
-############
+###############
 ##Install Packages
-############
+###############
 echo "Installing packages $PACKAGES"
 case $(uname -s) in
   OpenBSD)
@@ -118,22 +119,25 @@ case $(uname -s) in
 esac
 
 
-###########
+###############
 ##i3
-###########
+###############
 #remove default config
 # and link to dotfile config
 rm ~/.i3/config
 ln -s $DOTFILES/i3/config ~/.config/i3/config
-#i3status
-#this config should read first before the "defualt" /etc/i3status.conf
-#accodring to https://i3wm.org/i3status/manpage.html
+
+#i3status and i3block
+#this config should read first before the "default" /etc/i3status.conf
+#accodring to https://i3wm.org/i3status/manpage.html and
+#https://vivien.github.io/i3blocks/
 ln -s $DOTFILES/i3/i3status.conf ~/.config/i3status/config
+ln -s $DOTFILES/i3/i3blocks.conf ~/.config/i3blocks/config
 
 
-###########
+###############
 ##ssh
-###########
+###############
 echo "Setting up ssh"
 if [ ! -d ~/.ssh ]; then
   chmod 700 ~/.ssh
@@ -144,9 +148,9 @@ if [ ! -f ~/.ssh/authorized_keys ]; then
 fi
 
 
-#############
+###############
 ##Quicktile
-############
+###############
 if [ ! -f ~/.config/quicktile.cfg ]; then
   echo "Installing Quicktile"
   git clone https://github.com/ssokolow/quicktile.git
@@ -156,6 +160,17 @@ if [ ! -f ~/.config/quicktile.cfg ]; then
 else
   echo "~/.config/quicktile.cfg exists.  Not installing quicktile"
 fi
+
+
+###############
+#Fonts
+###############
+wget -P --no-clobber ~/.fonts/ \
+https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Bold.ttf  \
+https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Regular.ttf \
+https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Thin.ttf \
+https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Ultralight.ttf \
+https://github.com/FortAwesome/Font-Awesome/raw/master/fonts/fontawesome-webfont.ttf
 
 
 ############
