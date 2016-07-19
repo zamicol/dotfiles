@@ -165,7 +165,10 @@ fi
 ###############
 #Fonts
 ###############
-wget -P --no-clobber ~/.fonts/ \
+#-N update only on new
+#-P is for the directory
+#-q is quiet
+wget -Nq -P ~/.fonts/ \
 https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Bold.ttf  \
 https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Regular.ttf \
 https://github.com/supermarin/YosemiteSanFranciscoFont/raw/master/System%20San%20Francisco%20Display%20Thin.ttf \
