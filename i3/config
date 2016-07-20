@@ -157,13 +157,14 @@ bar {
   position top
   tray_output primary
   colors {
-    #background #000D1A
-    #background #07485F
+    statusline #FFFFFF
     # medium blue
     background #07495F
+
     # light gray
     #background #E5E5E6
-    statusline #FFFFFF
+    #background #000D1A
+    #background #07485F
     #statusline #10ABE1
   }
 }
