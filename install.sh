@@ -36,7 +36,8 @@ PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 # i3
 # feh is for x desktop background.
 # sysstat is for i3blocks cpu stats.
-PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat"
+# lxappearance is for caja's icons and theme
+PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance"
 
 # MATE
 # caja-share is for smb gui sharing.
