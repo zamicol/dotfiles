@@ -1,2 +1,2 @@
-xmodmap ~/.dotfiles/xmodmap
+xmodmap $HOME/.dotfiles/xmodmap
 synclient CoastingSpeed=0

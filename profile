@@ -23,8 +23,12 @@ fi
 
 #xmodmap changes
 #Remap caps lock to ctrl
-#must have xmodmap setting file.  
-xmodmap ~/.dotfiles/xmodmap
+#must have xmodmap setting file.
+xmodmap $HOME/.dotfiles/xmodmap
+
+#Shouldn't have to do this, but xinit is having issues with xinitrc.
+#maybe i3 bug?
+sh $HOME/.dotfiles/xinitrc
 
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
