@@ -3,7 +3,8 @@
 #######
 #######
 #######
-#Put i3 host specific configs in this file.
+
+source $HOME/.profile
 
 #zlap
 if [[ $(hostname -s) = zlap ]]; then
