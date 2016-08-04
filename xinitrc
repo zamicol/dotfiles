@@ -4,3 +4,4 @@
 
 xmodmap $HOME/.dotfiles/xmodmap 2>/dev/null
 synclient CoastingSpeed=0
+xbacklight -set 80
