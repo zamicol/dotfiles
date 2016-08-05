@@ -9,3 +9,4 @@
 	default = simple
 [http]
 	cookiefile = /home/z/.gitcookies
+	sslverify = true
