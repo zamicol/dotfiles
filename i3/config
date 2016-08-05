@@ -192,9 +192,9 @@ bindsym $mod+slash exec amixer -D pulse set Master 1+ unmute && amixer set Maste
 bindsym $mod+period exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB-
 bindsym $mod+comma exec amixer -D pulse set Master 1+ toggle
 
-# Host specific settings.caja
+# Dock Settings
 # For example, put monitor settings in here.
-exec ~/.dotfiles/i3/hosts.sh
+exec ~/.dotfiles/dock.sh
 
 # Screen lock
 # can also use i3lock
