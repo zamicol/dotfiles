@@ -12,6 +12,11 @@ if [[ $(hostname -s) = zlap ]]; then
  xrandr --output DP-1 --auto --right-of DP-2
 fi
 
+#zbox
+if [[ $(hostname -s) = zbox ]]; then
+ xrandr --auto --output DFP1 --primary
+fi
+
 #Work computer
 if [[ $(hostname -s) = coll* ]]; then
 	#monitors

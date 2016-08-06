@@ -1,1 +1,3 @@
-sh $HOME/.dotfiles/xinitrc
+#!/bin/sh
+. ~/.profile
+. ~/.xinitrc
