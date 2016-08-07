@@ -254,6 +254,14 @@ fi
 
 
 ####################
+# Printer
+####################
+# Brother
+# There doesn't appear to be a good way to do this at the moment.
+# an automate brother script can currently be found here:
+# http://support.brother.com/g/b/downloadend.aspx?c=us&lang=en&prod=mfcj410w_us&os=128&dlid=dlf006893_000&flang=4&type3=625
+
+####################
 # golang
 ####################
 # Golang gets installed via repo
