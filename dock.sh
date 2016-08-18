@@ -26,3 +26,6 @@ if [[ $(hostname -s) = coll* ]]; then
 	#Remmina applet icon
 	remmina -i &
 fi
+
+#x settings, make sure caps lock is remapped.  
+~/.xinitrc

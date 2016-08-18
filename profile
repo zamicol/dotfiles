@@ -26,5 +26,6 @@ sh $HOME/.dotfiles/xinitrc
 
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
+export GOROOT_BOOTSTRAP=/usr/lib/go
 #$GOPATH must not be set to $GOROOT
 #export GOROOT=$HOME/dev/go
