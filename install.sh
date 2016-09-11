@@ -33,11 +33,13 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 # Bloat packages
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
 
-# i3 and desktop environment
+# i3wm
+# and desktop environment
 # feh is for x desktop background.
 # sysstat is for i3blocks cpu stats.
 # lxappearance is for caja's icons and theme
-PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance xbacklight"
+# compton is compositing manager
+PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance xbacklight compton"
 
 # MATE
 # caja-share is for smb gui sharing.
