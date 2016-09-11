@@ -128,6 +128,11 @@ case $(uname -s) in
   ;;
 esac
 
+####################
+# git
+####################
+git config --global core.excludesfile "$DOTFILES/gitignore_global"
+
 
 ####################
 # i3
