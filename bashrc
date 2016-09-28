@@ -20,3 +20,6 @@ alias mpush='git remote | xargs -L1 git push --all'
 #set default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+#Explicitly set prompt
+export PS1='\u@\H:\w$'
