@@ -5,6 +5,7 @@ alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
 alias a="sudo apt-get install"
 alias zup="sudo apt-get update && sudo apt-get upgrade -y"
+alias pwd="/bin/pwd"
 export EDITOR=/usr/bin/vim
 
 #get xclip working
@@ -20,3 +21,6 @@ alias mpush='git remote | xargs -L1 git push --all'
 #set default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+#Explicitly set prompt
+export PS1='\u@\H:\w$'

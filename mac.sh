@@ -8,3 +8,7 @@ ln -s ~/.dotfiles/profile $HOME/.profile
 
 //Atom
 apm install project-manager
+
+//PROBLEMS WITH MAC
+//Use /bine/pwd instead of pwd as pwd is innacurate. 
+
