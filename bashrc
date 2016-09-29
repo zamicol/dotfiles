@@ -4,6 +4,7 @@ alias node="nodejs"
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
 alias a="sudo apt-get install"
+alias zup="sudo apt-get update && sudo apt-get upgrade -y"
 export EDITOR=/usr/bin/vim
 
 #get xclip working

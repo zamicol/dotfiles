@@ -173,12 +173,15 @@ bar {
   position top
   tray_output primary
   colors {
-    statusline #FFFFFF
+    statusline #333333
     # medium blue
     #background #07495F
 
     #Zami Midnight Blue
-    background #000123
+    #background #000123
+
+    #So I can see the icons
+    background #f2f2f2
 
     # light gray
     #background #E5E5E6
