@@ -19,8 +19,7 @@ DOTFILES=`cd "$DOTFILES"; pwd`
 ####################
 # Repos
 ####################
-# lxd-stable has golang packages.
-REPOS="ppa:ubuntu-lxc/lxd-stable ppa:webupd8team/atom"
+REPOS="ppa:webupd8team/atom"
 
 ####################
 # Packages
@@ -45,7 +44,7 @@ PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance xbacklight
 PACKAGES="$PACKAGES caja-share"
 
 # Dev packages
-PACKAGES="$PACKAGES golang atom"
+PACKAGES="$PACKAGES atom"
 
 # QuickTile packages
 PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
@@ -276,8 +275,8 @@ fi
 ####################
 # golang
 ####################
-# Golang gets installed via repo
-# Golang's src on Debian is located at /usr/lib/go/src
+# Install manually via https://golang.org/doc/install
+# /usr/local/go/bin
 echo "Golang"
 # $GOPATH should be set in .profile
 echo "gopath: $GOPATH"

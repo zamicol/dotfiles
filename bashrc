@@ -12,6 +12,18 @@ export EDITOR="$VISUAL"
 #Explicitly set prompt
 export PS1='\u@\H:\w$'
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+#xinitrc
+sh $HOME/.dotfiles/xinitrc
+
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
