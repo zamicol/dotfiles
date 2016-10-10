@@ -2,7 +2,6 @@
 # When possible, use XDG directory structure.
 #To change look and feel, use lxappearance
 
-
 ###############
 ###############
 # Start
@@ -70,22 +69,19 @@ $HOME/.config/i3blocks $DOTFILES/fonts"
 ####################
 
 ####################
-# Make sure .bashrc is being used by the current shell environment
-####################
-#use "source" in bash
-. $HOME/.bashrc
-. $HOME/.profile
-
-####################
 # mkdirs
 ####################
 for dir in $DIRS; do
   mkdir -p $dir
 done
 
+
 ################
 # Symlinks
 ################
+rm $HOME/.bashrc
+rm $HOME/.profile
+
 for link in $SYMLINKS; do
   if [ ! -f $HOME/.$link ] && [ ! -d $HOME/.$link ]; then
     if ln -s $DOTFILES/$link $HOME/.$link ; then
@@ -98,6 +94,13 @@ done
 
 
 ####################
+# Make sure .bashrc is being used by the current shell environment
+####################
+#use "source" in bash
+. $HOME/.bashrc
+. $HOME/.profile
+
+####################
 # Repos
 ####################
 for r in $REPOS; do
@@ -105,7 +108,7 @@ for r in $REPOS; do
   sudo add-apt-repository $r -y
 done
 # Update packages that are now available
-#sudo apt-get update
+sudo apt-get update
 
 
 ####################
@@ -158,6 +161,8 @@ git clone git://github.com/vivien/i3blocks $HOME/dev/i3blocks
 echo "Setting up ssh"
 if [ ! -d $HOME/.ssh ]; then
   chmod 700 $HOME/.ssh
+fi
+if [ ! -f $HOME/.ssh/id_rsa ]; then
   ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
 fi
 if [ ! -f $HOME/.ssh/authorized_keys ]; then
@@ -256,7 +261,7 @@ if ! dpkg -l google-chrome-stable > /dev/null; then
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
   sudo apt-get update
-  sudo apt-get install google-chrome-stable
+  sudo apt-get install -y google-chrome-stable
 fi
 
 
