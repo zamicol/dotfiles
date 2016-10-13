@@ -18,13 +18,13 @@ if [[ $(hostname -s) = zbox ]]; then
 fi
 
 #Work computer
-if [[ $(hostname -s) = coll* ]]; then
+if [[ $(hostname -s) = zco* ]]; then
 	#monitors
-  xrandr --output DP2 --auto --right-of eDP1 --primary
-  xrandr --output HDMI1 --auto --right-of DP2
+  xrandr --output DP1-1 --auto --right-of eDP1 --primary
+  xrandr --output DP1-2 --auto --right-of DP1-1
 
 	#Remmina applet icon
-	remmina -i &
+	#remmina -i &
 fi
 
 #x settings, make sure caps lock is remapped.  
