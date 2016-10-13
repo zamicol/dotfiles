@@ -20,9 +20,10 @@ fi
 #xinitrc
 sh $HOME/.dotfiles/xinitrc
 
-export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
+# This really should be in profile. Fix desktop environments doing it wrong.  
+# export GOPATH=$HOME/dev/go
+# export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:/usr/local/go/bin
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

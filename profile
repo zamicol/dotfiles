@@ -21,3 +21,6 @@ fi
 
 #$GOPATH must not be set to $GOROOT
 #export GOROOT=$HOME/dev/go
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
