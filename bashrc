@@ -3,6 +3,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Do this again here, to make sure.  
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+
+
 export EDITOR=/usr/bin/vim
 
 #set default editor.
