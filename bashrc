@@ -3,10 +3,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Do this again here, to make sure.  
+# Do this again here, to make sure.
+#go
 export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
 
 export EDITOR=/usr/bin/vim
@@ -26,7 +26,7 @@ fi
 #xinitrc
 sh $HOME/.dotfiles/xinitrc
 
-# This really should be in profile. Fix desktop environments doing it wrong.  
+# This really should be in profile. Fix desktop environments doing it wrong.
 # export GOPATH=$HOME/dev/go
 # export PATH=$PATH:$GOPATH/bin
 # export PATH=$PATH:/usr/local/go/bin
