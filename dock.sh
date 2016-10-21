@@ -15,6 +15,7 @@ fi
 #zbox
 if [[ $(hostname -s) = zbox ]]; then
  xrandr --auto --output DFP1 --primary
+ xrandr --output DFP5 --auto --pos 3840x800
 fi
 
 #Work computer
