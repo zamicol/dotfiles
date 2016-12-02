@@ -119,7 +119,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X sessio,,,,,n)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -173,7 +173,7 @@ client.background       #ffffff
 bar {
   #status_command i3status
   status_command SCRIPT_DIR=/usr/local/libexec/i3blocks i3blocks
-  font pango:System San Francisco Display, FontAwesome 10
+  font pango:System San Francisco Display, FontAwesome 9
   position top
   tray_output primary
   colors {
@@ -198,7 +198,7 @@ bar {
 
 
 # Font
-font pango:System San Francisco Display, FontAwesome 12
+font pango:System San Francisco Display, FontAwesome 10
 
 # Next Workspace on output
 bindsym $mod+Control+Right workspace next_on_output
