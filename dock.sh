@@ -6,23 +6,23 @@
 
 source $HOME/.profile
 
-#zlap
+# zlap
 if [[ $(hostname -s) = zlap ]]; then
 # xrandr --output DP-2 --auto --right-of LVDS1 --primary
 # xrandr --output DP-1 --auto --right-of DP-2
 
- #Office
+ # Office
  xrandr --output DP-2 --auto --right-of LVDS1 --primary
- xrandr --output DP-4 --auto --right-of DP-2 
+ xrandr --output DP-4 --auto --right-of DP-2
 fi
 
-#zbox
+# zbox
 if [[ $(hostname -s) = zbox ]]; then
  xrandr --output DFP1 --auto --primary
  xrandr --output DFP5 --auto --pos 3840x500
 fi
 
-#Work computer
+# Work computer
 if [[ $(hostname -s) = zco* ]]; then
 	#monitors
   xrandr --output DP1-1 --auto --right-of eDP1 --primary
@@ -32,5 +32,8 @@ if [[ $(hostname -s) = zco* ]]; then
 	#remmina -i &
 fi
 
-#x settings, make sure caps lock is remapped.  
+# x settings, make sure caps lock is remapped.
 ~/.xinitrc
+
+# Set numlock to on.
+for t in /dev/tty[0-9]*; do setleds -D +num <$t; done
