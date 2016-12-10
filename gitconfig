@@ -1,6 +1,6 @@
 [user]
-	email = zamicol@gmail.com
 	name = Zach Collier
+	email = zamicol@gmail.com
 [credential]
 	helper = cache --timeout=360000
 [url "https://"]
