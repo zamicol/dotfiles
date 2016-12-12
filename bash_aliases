@@ -12,6 +12,7 @@ alias zsleep="sudo pm-suspend"
 alias a="sudo apt-get install"
 alias zup="sudo apt-get update && sudo apt-get upgrade -y"
 alias pwd="/bin/pwd"
+alias zgo="dev/go/src/github.com/zamicol"
 
 
 #get xclip working
