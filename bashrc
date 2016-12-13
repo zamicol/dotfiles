@@ -4,7 +4,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 # Work Alias definitions located in another file.
 if [ -f ~/.bash_aliases_work ]; then
-    . ~/.bash_aliases_work
+    . ~/.bash_aliases_private
 fi
 
 # Do this again here, to make sure.

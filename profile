@@ -22,3 +22,6 @@ fi
 #go
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
+
+# Private Profile
+. "$HOME/.bashrc"

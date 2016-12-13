@@ -55,7 +55,7 @@ PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 # Symlink from dotfiles to home.
 # Will not overwrite existing
 # Files with be prepended with a dot.
-SYMLINKS="bashrc bash_aliases bash_aliases_work xsession profile xinitrc gitconfig fonts"
+SYMLINKS="bashrc bash_aliases bash_aliases_private xsession profile profile_private xinitrc gitconfig fonts"
 # Create these dirs if they do not yet exist.
 DIRS="$HOME/dev/go $HOME/.config/i3 $HOME/.ssh $HOME/.config/i3status \
 $HOME/.config/i3blocks $DOTFILES/fonts"
