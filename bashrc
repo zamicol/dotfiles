@@ -6,6 +6,10 @@ fi
 if [ -f ~/.bash_aliases_work ]; then
     . ~/.bash_aliases_private
 fi
+# Work Alias definitions located in another file.
+if [ -f ~/.profile_private ]; then
+    . ~/.profile_private
+fi
 
 # Do this again here, to make sure.
 #go
