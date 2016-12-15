@@ -1,13 +1,22 @@
 
 ## Network ##
-
-Network Editor
+### Network Editor ###
 
     nm-connection-editor
+
+## Used ports and Unix sockets ##
+
+    netstat -nl
+
+
+## Processes ##
+### Find a process ###
+
+    ps -ef | grep <process name>
 
 
 ## Archiving and Compression ##
 
-un tar.gz
+### untar tar.gz ###
 
-  tar -C <location> -xzf <tar>
+    tar -C <location> -xzf <tar>
