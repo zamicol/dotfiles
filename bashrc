@@ -2,13 +2,9 @@
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-# Work Alias definitions located in another file.
-if [ -f ~/.bash_aliases_work ]; then
-    . ~/.bash_aliases_private
-fi
-# Work Alias definitions located in another file.
-if [ -f ~/.profile_private ]; then
-    . ~/.profile_private
+# Private definitions located in another file.
+if [ -f ~/.dotfiles/private/profile ]; then
+    . ~/.dotfiles/private/profile
 fi
 
 # Do this again here, to make sure.
