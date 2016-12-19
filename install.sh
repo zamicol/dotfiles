@@ -290,3 +290,4 @@ echo "goroot: $GOROOT"
 apm install go-plus
 apm install minimap
 apm install symbols-tree-view
+apm install atom-beautify
