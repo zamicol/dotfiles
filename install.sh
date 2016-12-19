@@ -291,3 +291,9 @@ apm install go-plus
 apm install minimap
 apm install symbols-tree-view
 apm install atom-beautify
+
+####################
+# VS Code
+####################
+#Go extension
+code --install-extension lukehoban.Go
