@@ -287,13 +287,24 @@ echo "goroot: $GOROOT"
 ####################
 # Atom
 ####################
-apm install go-plus
-apm install minimap
-apm install symbols-tree-view
-apm install atom-beautify
+# apm install go-plus
+# apm install minimap
+# apm install symbols-tree-view
+# apm install atom-beautify
 
 ####################
 # VS Code
 ####################
+
+if [ hash code 2>/dev/null ]; then
+  echo >&2 "Code not installed.";
+else
+  echo >&2 "Code installed.";
+fi
+
 #Go extension
 code --install-extension lukehoban.Go
+code --install-extension robertohuertasm.vscode-icons
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension HookyQR.beautify
