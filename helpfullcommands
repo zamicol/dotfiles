@@ -20,3 +20,7 @@
 ### untar tar.gz ###
 
     tar -C <location> -xzf <tar>
+
+## USB ISO image disk gui ##
+
+    sudo gnome-disks

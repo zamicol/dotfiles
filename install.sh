@@ -308,3 +308,4 @@ code --install-extension robertohuertasm.vscode-icons
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension HookyQR.beautify
+code --install-extension ronnidc.nunjucks
