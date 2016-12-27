@@ -4,9 +4,11 @@ source $HOME/.profile
 
 # zlap
 if [[ $(hostname -s) = zlap ]]; then
+ xrandr --output eDP1 --auto --primary
  # Office
- xrandr --output DP-4 --auto --right-of LVDS1 --primary
- xrandr --output DP-2 --auto --right-of DP-4
+ xrandr --output HDMI1 --auto --right-of eDP1
+ #xrandr --output DP-4 --auto --right-of LVDS1 --primary
+ #xrandr --output DP-2 --auto --right-of DP-4
 fi
 
 # zbox

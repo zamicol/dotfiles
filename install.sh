@@ -1,10 +1,15 @@
 #!/bin/sh
 # When possible, use XDG directory structure.
-#To change look and feel, use lxappearance
+#
+#
+# Manual Items:
+#
+# - To change look and feel, use lxappearance
+# - Install Go.  The $GOPATH is set by this script.
 
 ###############
 ###############
-# Start
+# Setup
 ###############
 ###############
 # If using bash
@@ -29,14 +34,17 @@ REPOS="ppa:webupd8team/atom"
 PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 
 # Bloat packages
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip"
+# `dconf-tools` is for system config editing.  The package installs `dconf-editor`
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools"
 
 # i3wm
 # and desktop environment
-# feh is for x desktop background.
-# sysstat is for i3blocks cpu stats.
-# lxappearance is for caja's icons and theme
-# compton is compositing manager
+#
+# `feh` is for x desktop background.
+# `sysstat` is for i3blocks cpu stats.
+# `lxappearance` is for caja's icons and theme
+# `compton` is compositing manager
+# `xbacklight` controls display's backlight.
 PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance xbacklight compton"
 
 # MATE
@@ -56,7 +64,7 @@ PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 # Will not overwrite existing
 # Files with be prepended with a dot.
 SYMLINKS="bashrc bash_aliases bash_aliases_private xsession profile profile_private xinitrc gitconfig fonts"
-# Create these dirs if they do not yet exist.
+# Create these dirs if not exist.
 DIRS="$HOME/dev/go $HOME/.config/i3 $HOME/.ssh $HOME/.config/i3status \
 $HOME/.config/i3blocks $DOTFILES/fonts"
 
@@ -145,7 +153,7 @@ ln -s $DOTFILES/i3/config $HOME/.config/i3/config
 
 # i3status and i3block
 # this config should read first before the "default" /etc/i3status.conf
-# accodring to https://i3wm.org/i3status/manpage.html and
+# according to https://i3wm.org/i3status/manpage.html and
 # https://vivien.github.io/i3blocks/
 ln -s $DOTFILES/i3/i3status.conf $HOME/.config/i3status/config
 ln -s $DOTFILES/i3/i3blocks.conf $HOME/.config/i3blocks/config
