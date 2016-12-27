@@ -11,10 +11,11 @@ alias zsr="sudo shutdown -r now"
 alias zsleep="sudo pm-suspend"
 alias a="sudo apt-get install"
 alias zup="sudo apt-get update && sudo apt-get upgrade -y"
-alias pwd="/bin/pwd"i #Fixes Mac issue with inaccurate pwd.  
+alias pwd="/bin/pwd"i #Fixes Mac issue with inaccurate pwd.
 alias sha256="sha256sum"
 alias sha="sha256sum"
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
+alias bitcoin="bitcoin-qt"
 
 #get xclip working
 #You can pipe to the clipboard like this

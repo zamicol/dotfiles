@@ -24,7 +24,7 @@ DOTFILES=`cd "$DOTFILES"; pwd`
 ####################
 # Repos
 ####################
-REPOS="ppa:webupd8team/atom"
+REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
 
 ####################
 # Packages
@@ -35,7 +35,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 
 # Bloat packages
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools"
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools bitcoin-qt"
 
 # i3wm
 # and desktop environment
