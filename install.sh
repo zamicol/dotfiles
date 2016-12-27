@@ -295,10 +295,12 @@ echo "goroot: $GOROOT"
 ####################
 # Atom
 ####################
-# apm install go-plus
-# apm install minimap
-# apm install symbols-tree-view
-# apm install atom-beautify
+# Workaround until apm fixes reinstall of already installed.
+# See https://github.com/atom/apm/issues/170
+if [[ ! -d "$HOME/.atom/packages/go-plus" ]]
+then
+    apm install go-plus minimap symbols-tree-view atom-beautify
+fi
 
 ####################
 # VS Code
