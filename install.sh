@@ -285,7 +285,7 @@ fi
 ####################
 # Install manually via https://golang.org/doc/install
 # /usr/local/go/bin
-echo "Golang"
+echo "Golang setup"
 # $GOPATH should be set in .profile
 echo "gopath: $GOPATH"
 echo "goroot: $GOROOT"
