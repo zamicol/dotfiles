@@ -25,3 +25,5 @@
 
     sudo gnome-disks
     mintstick -m iso
+    # Easy windows GUI:
+    winusb
