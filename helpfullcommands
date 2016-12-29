@@ -24,3 +24,4 @@
 ## USB ISO image disk gui ##
 
     sudo gnome-disks
+    mintstick -m iso
