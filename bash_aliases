@@ -16,6 +16,7 @@ alias sha256="sha256sum"
 alias sha="sha256sum"
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
 alias bitcoin="bitcoin-qt"
+alias b="xbacklight -set"
 
 #get xclip working
 #You can pipe to the clipboard like this

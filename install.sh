@@ -232,6 +232,8 @@ if [ ! -d "$HOME/.vim" ]; then
   fi
 fi
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
 ####################
 # emacs
