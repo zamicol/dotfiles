@@ -4,7 +4,7 @@
 
 xmodmap $HOME/.dotfiles/xmodmap 2>/dev/null
 synclient CoastingSpeed=0
-xbacklight -set 100
+#xbacklight -set 100
 
 # Faster key repeat and delay
 # Stolen from http://unix.stackexchange.com/a/216238/40449
