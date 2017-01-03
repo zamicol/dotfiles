@@ -1,12 +1,20 @@
+# Git Based System Auxiliary Memory for Biological Analog Interface #
+
 
 ## Network ##
-### Network Editor ###
+### Network Editor GUI ###
 
     nm-connection-editor
 
 ## Used ports and Unix sockets ##
 
     netstat -nl
+
+## SSH
+
+### SHA 256 fingerprint ###
+
+    ssh-keygen -lf ~/.ssh/known_hosts
 
 
 ## Processes ##
