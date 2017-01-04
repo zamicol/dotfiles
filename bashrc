@@ -14,7 +14,8 @@ export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
 # No sudo on node npm.
 # https://github.com/qbit/node_bin
-export PATH=$PATH:~/node_bin/node_modules/.bin
+# then use `npm install --prefix ~/dev/node_bin <package>`
+export PATH=$PATH:~/dev/node_bin/node_modules/.bin
 
 export EDITOR=/usr/bin/vim
 

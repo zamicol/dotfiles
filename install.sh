@@ -22,12 +22,12 @@ DOTFILES="$HOME/.dotfiles"
 DOTFILES=`cd "$DOTFILES"; pwd`
 
 ####################
-# Repos
+# Repo ppa's
 ####################
 REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
 
 ####################
-# Packages
+# Package Variables
 ####################
 # Packages to be installed on the system.
 # Some of these are needed for this script,
@@ -35,7 +35,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
 
 # Bloat packages
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools bitcoin-qt"
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools bitcoin-qt nodejs"
 
 # i3wm
 # and desktop environment
@@ -110,6 +110,19 @@ done
 ####################
 # Repos
 ####################
+# node
+# Add key
+curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+# Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
+NODEVERSION=node_7.x
+# The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
+# - For Debian distributions: wheezey, jessie, sid, etc...
+# - For Ubuntu distributions: precise, trusty, xenial, etc...
+# - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
+DISTRO="$(lsb_release -s -c)"
+echo "deb https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+
 for r in $REPOS; do
   echo "Adding repo $r"
   sudo add-apt-repository $r -y
