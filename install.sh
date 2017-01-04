@@ -177,6 +177,12 @@ if [ ! -f $HOME/.ssh/authorized_keys ]; then
 fi
 
 
+####################
+# private
+####################
+cd $DOTFILES
+git clone git@bitbucket.org:zamicol/private.git
+
 ###############
 # Quicktile
 ###############

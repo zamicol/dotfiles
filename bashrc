@@ -12,6 +12,9 @@ fi
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
+# No sudo on node npm.
+# https://github.com/qbit/node_bin
+export PATH=$PATH:~/node_bin/node_modules/.bin
 
 export EDITOR=/usr/bin/vim
 
