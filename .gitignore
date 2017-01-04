@@ -11,3 +11,5 @@ fonts
 
 # Ignore profile contents but keep the folder.  
 profile/*
+
+private
