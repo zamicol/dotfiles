@@ -2,7 +2,7 @@
 
 
 ## Network ##
-### Network Editor GUI ###
+Network Editor GUI
 
     nm-connection-editor
 
@@ -12,20 +12,38 @@
 
 ## SSH
 
-### SHA 256 fingerprint ###
+Master socket:
+
+    ssh -M -S ~/.ssh/<name> -fnNT -L 9000:localhost:<remote_port> <remote>
+    ssh -S ~/.ssh/<another_name> -fnNT -L 9001:localhost:<another_remote_port> <another_remote>
+    ssh -S ~/.ssh/dev -O check <name>
+    ssh -S ~/.ssh/dev -O stop <name>
+    ssh -S ~/.ssh/dev -O exit <name>
+
+Normal Tunnel:
+
+    ssh -L 9000:localhost:<remote_port> <remote>
+
+## git ##
+
+Remove a directory from tracking
+
+   git rm -r --cached <dir>
+
+## SHA 256 fingerprint ##
 
     ssh-keygen -lf ~/.ssh/known_hosts
 
 
 ## Processes ##
-### Find a process ###
+Find a process
 
     ps -ef | grep <process name>
 
 
 ## Archiving and Compression ##
 
-### untar tar.gz ###
+untar tar.gz
 
     tar -C <location> -xzf <tar>
 
