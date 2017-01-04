@@ -123,6 +123,7 @@ DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 echo "deb-src https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
 
+# Add ppa's
 for r in $REPOS; do
   echo "Adding repo $r"
   sudo add-apt-repository $r -y
