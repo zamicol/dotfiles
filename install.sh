@@ -111,6 +111,8 @@ done
 # Repos
 ####################
 # node
+# install packages with `npm install --prefix ~/dev/node_bin <package>`
+#
 # Add key
 cat $DOTFILES/nodesource.gpg.key | sudo apt-key add -
 # Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
@@ -196,6 +198,9 @@ fi
 ####################
 cd $DOTFILES
 git clone git@bitbucket.org:zamicol/private.git
+cd private
+git pull
+cd $DOTFILES
 
 ###############
 # Quicktile
