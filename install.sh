@@ -111,7 +111,9 @@ done
 # Repos
 ####################
 # node
-# install packages with `npm install --prefix ~/dev/node_bin <package>`
+# install packages with:
+#
+#    npm install --prefix ~/dev/node_bin <package>
 #
 # Add key
 cat $DOTFILES/nodesource.gpg.key | sudo apt-key add -
