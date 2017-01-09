@@ -53,3 +53,8 @@ untar tar.gz
     mintstick -m iso
     # Easy windows GUI:
     winusb
+
+## Cron ##
+root's cron:
+
+    crontab -e
