@@ -4,6 +4,8 @@
 
 xmodmap $HOME/.dotfiles/xmodmap 2>/dev/null
 synclient CoastingSpeed=0
+VertEdgeScroll=0
+HorizEdgeScroll=0
 #xbacklight -set 100
 
 # Faster key repeat and delay
