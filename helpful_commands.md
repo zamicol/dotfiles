@@ -24,6 +24,10 @@ Normal Tunnel:
 
     ssh -L 9000:localhost:<remote_port> <remote>
 
+Regenerate Public Key from Private:
+
+    ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+
 ## git ##
 
 Remove a directory from tracking
