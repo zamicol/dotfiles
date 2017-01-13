@@ -1,34 +1,37 @@
-#The silly things
-
+# Alias file
+#
 #-a all, -l long listing, -F append indicator (one of */=>@|) to entries
 #-C Columns, -A almost all
 alias l='ls -alF'
 alias ll='ls -CF'
 alias la='ls -A'
-alias node="nodejs"
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
-alias zsleep="sudo pm-suspend && mate-screensaver-command -l"
-alias a="sudo apt-get install"
-alias zup="sudo apt-get update && sudo apt-get upgrade -y"
 alias pwd="/bin/pwd" #Fixes Mac issue with inaccurate pwd.
+alias zup="sudo apt-get update || sudo apt-get upgrade -y"
+alias a="sudo apt-get install"
+alias zsleep="sudo pm-suspend || mate-screensaver-command -l"
+# Dev
+alias zgo="cd ~/dev/go/src/github.com/zamicol"
+################
+# Applications
+################
 alias sha256="sha256sum"
 alias sha="sha256sum"
-alias zgo="cd ~/dev/go/src/github.com/zamicol"
 alias bitcoin="bitcoin-qt"
+alias node="nodejs"
 alias b="xbacklight -set"
-
 #get xclip working
 #You can pipe to the clipboard like this
 #echo "hello" | setclip
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
-
 #mpush for git
 #push to all remotes, "multiple-push"
 alias mpush='git remote | xargs -L1 git push --all'
 
-#http://superuser.com/a/44187
+# Unzip using `x <filename>`
+# http://superuser.com/a/44187
 x(){
     if [ -f $1 ] ; then
             case $1 in
