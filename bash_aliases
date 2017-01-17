@@ -1,8 +1,14 @@
 # Alias file
 #
-#-a all, -l long listing, -F append indicator (one of */=>@|) to entries
-#-C Columns, -A almost all
-alias l='ls -alF'
+# -a all, -l long listing, -F append indicator (one of */=>@|) to entries
+# -C Columns, -A almost all
+# Old ls:
+# alias l='ls -alF'
+# List with count printed at bottom.
+listWithCount() {
+    ls -alF --color=always | awk 'BEGIN {i=-2} {if ($0 ~/^[d|\-]/) {i+=1} print $0} END {print "Nodes: "i}'
+}
+alias l=listWithCount
 alias ll='ls -CF'
 alias la='ls -A'
 alias zsd="sudo shutdown -h"
