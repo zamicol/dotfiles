@@ -8,9 +8,9 @@ alias la='ls -A'
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
 alias pwd="/bin/pwd" #Fixes Mac issue with inaccurate pwd.
-alias zup="sudo apt-get update || sudo apt-get upgrade -y"
+alias zup="sudo apt-get update; sudo apt-get upgrade -y"
 alias a="sudo apt-get install"
-alias zsleep="sudo pm-suspend || mate-screensaver-command -l"
+alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
 # Dev
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
 ################
