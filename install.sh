@@ -183,11 +183,13 @@ git clone git://github.com/vivien/i3blocks $HOME/dev/i3blocks
 ####################
 # ssh
 ####################
+# Zamicol's ssh keys can be found at https://github.com/zamicol.keys
 echo "Setting up ssh"
 if [ ! -d $HOME/.ssh ]; then
   chmod 700 $HOME/.ssh
 fi
 if [ ! -f $HOME/.ssh/id_rsa ]; then
+  ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519.pub
   ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
 fi
 if [ ! -f $HOME/.ssh/authorized_keys ]; then
