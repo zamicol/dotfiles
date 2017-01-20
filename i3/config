@@ -161,6 +161,8 @@ bindsym $mod+r mode "resize"
 ####################
 # Window Colors
 ####################
+
+bindsym $mod+Shift+e exec exit
 # class                 border  backgr. text    indicator child_border
 client.focused          #002b36 #4675CC #FFFFFF #268bd2
 client.focused_inactive #000123 #000123 #839496 #073642
