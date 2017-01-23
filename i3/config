@@ -119,7 +119,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X sessio,,,,,n)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -162,7 +163,6 @@ bindsym $mod+r mode "resize"
 # Window Colors
 ####################
 
-bindsym $mod+Shift+e exec exit
 # class                 border  backgr. text    indicator child_border
 client.focused          #002b36 #4675CC #FFFFFF #268bd2
 client.focused_inactive #000123 #000123 #839496 #073642
