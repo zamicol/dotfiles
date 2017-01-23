@@ -13,7 +13,7 @@ alias ll='ls -CF'
 alias la='ls -A'
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
-alias pwd="/bin/pwd" #Fixes Mac issue with inaccurate pwd.
+alias pwd="/bin/pwd" # Fixes Mac issue with inaccurate pwd.
 alias zup="sudo apt-get update; sudo apt-get upgrade -y"
 alias a="sudo apt-get install"
 alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
@@ -29,11 +29,11 @@ alias sha="sha256sum"
 alias bitcoin="bitcoin-qt"
 alias node="nodejs"
 alias b="xbacklight -set"
-#get xclip working
-#You can pipe to the clipboard like this
-#echo "hello" | setclip
-alias setclip='xclip -selection c'
-alias getclip='xclip -selection clipboard -o'
+# get xclip working
+# You can pipe to the clipboard like this
+# echo "hello" | clipset
+alias clipset='xclip -selection c'
+alias clipget='xclip -selection clipboard -o'
 ################
 # Git
 ################
