@@ -20,7 +20,9 @@ alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
 # Dev
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
 ################
+################
 # Applications
+################
 ################
 alias sha256="sha256sum"
 alias sha="sha256sum"
@@ -32,8 +34,12 @@ alias b="xbacklight -set"
 #echo "hello" | setclip
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
-#mpush for git
-#push to all remotes, "multiple-push"
+################
+# Git
+################
+# mpush for git
+# push to all remotes, "multiple-push"
+alias gitpp='git pull && git push'
 alias mpush='git remote | xargs -L1 git push --all'
 
 # Unzip using `x <filename>`
