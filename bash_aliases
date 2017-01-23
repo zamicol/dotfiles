@@ -6,7 +6,7 @@
 # alias l='ls -alF'
 # List with count printed at bottom.
 listWithCount() {
-    ls -alF --color=always | awk 'BEGIN {i=-2} {if ($0 ~/^[d|\-]/) {i+=1} print $0} END {print "Nodes: "i}'
+    ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[d|\-]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^\-/) {f+=1} print $0} END {print "Nodes:"i " Files:"f " Dirs:"d }'
 }
 alias l=listWithCount
 alias ll='ls -CF'
