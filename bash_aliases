@@ -24,6 +24,8 @@ alias zgo="cd ~/dev/go/src/github.com/zamicol"
 # Applications
 ################
 ################
+alias dock=". ~/.dotfiles/dock.sh"
+alias undock=". ~/.dotfiles/undock.sh"
 alias sha256="sha256sum"
 alias sha="sha256sum"
 alias bitcoin="bitcoin-qt"
