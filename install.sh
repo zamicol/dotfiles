@@ -189,7 +189,7 @@ if [ ! -d $HOME/.ssh ]; then
   chmod 700 $HOME/.ssh
 fi
 if [ ! -f $HOME/.ssh/id_rsa ]; then
-  ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519.pub
+  ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519
   ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
 fi
 if [ ! -f $HOME/.ssh/authorized_keys ]; then
