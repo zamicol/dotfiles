@@ -62,3 +62,10 @@ untar tar.gz
 root's cron:
 
     crontab -e
+
+
+## Files ##
+### Add a line if it doesn't already exist ###
+LINE='example line'
+FILE=file.txt
+grep -q "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
