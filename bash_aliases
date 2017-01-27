@@ -31,6 +31,7 @@ alias sha="sha256sum"
 alias bitcoin="bitcoin-qt"
 alias node="nodejs"
 alias b="xbacklight -set"
+alias extract="x"
 # get xclip working
 # You can pipe to the clipboard like this
 # echo "hello" | clipset
