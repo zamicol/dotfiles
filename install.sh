@@ -57,6 +57,9 @@ PACKAGES="$PACKAGES atom"
 # QuickTile packages
 PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 
+# Evil packages
+REMOVEPACKAGES="thunderbird"
+
 ####################
 # Files
 ####################
@@ -155,6 +158,10 @@ case $(uname -s) in
   echo 'system unknown.  Not installing packages'
   ;;
 esac
+
+
+# Remove
+sudo apt-get -y remove $REMOVEPACKAGES
 
 ####################
 # git
