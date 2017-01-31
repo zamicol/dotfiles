@@ -1,17 +1,11 @@
 # Git Based System Auxiliary Memory for Biological Analog Interface #
 
+# sh #
 
-## Network ##
-Network Editor GUI
+[Rich’s sh (POSIX shell) tricks](http://www.etalabs.net/sh_tricks.html)
 
-    nm-connection-editor
-
-## Used ports and Unix sockets ##
-
-    netstat -nl
-
-## SSH
-
+# ssh #
+## sockets ##
 Master socket:
 
     ssh -M -S ~/.ssh/<name> -fnNT -L 9000:localhost:<remote_port> <remote>
@@ -28,15 +22,24 @@ Regenerate Public Key from Private:
 
     ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 
+## SHA256 fingerprint ##
+
+    ssh-keygen -lf ~/.ssh/known_hosts
+
+## Network ##
+Network Editor GUI
+
+    nm-connection-editor
+
+## Used ports and Unix sockets ##
+
+    netstat -nl
+
 ## git ##
 
 Remove a directory from tracking
 
    git rm -r --cached <dir>
-
-## SHA 256 fingerprint ##
-
-    ssh-keygen -lf ~/.ssh/known_hosts
 
 
 ## Processes ##
