@@ -8,7 +8,7 @@ if [[ $(hostname -s) = zlap ]]; then
   # Office
   # B286HK Monitor
   #xrandr --output DP2 --rate 30 --mode 3840x2160 --right-of eDP1
-  xrandr --output DP2 --rate 60 --mode 1920x1080 --right-of eDP1
+  xrandr --output DP2 --rate 60 --mode 1920x1080 --right-of eDP1 --primary
   xrandr --output HDMI1 --right-of DP2
   # 3840x2160 at 60hz only over Display Port
   # 30hxz max over HDMI
