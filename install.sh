@@ -226,6 +226,14 @@ else
   echo "$HOME/.config/quicktile.cfg exists.  Not installing quicktile"
 fi
 
+###############
+# MATE (GUI)
+###############
+# caja always use location path in location bar
+# open `dconf-editor`
+# search for "always-use-location-entry", or just do this:
+gsettings set org.mate.caja.preferences always-use-location-entry true
+
 
 ####################
 # Fonts
