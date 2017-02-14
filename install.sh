@@ -45,7 +45,8 @@ PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-too
 # `lxappearance` is for caja's icons and theme
 # `compton` is compositing manager
 # `xbacklight` controls display's backlight.
-PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance xbacklight compton"
+# `arandr` is a gui for xrandr
+PACKAGES="$PACKAGES i3 dmenu i3status i3lock feh sysstat lxappearance xbacklight compton arandr"
 
 # MATE
 # caja-share is for smb gui sharing.
