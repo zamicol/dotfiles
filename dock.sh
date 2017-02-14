@@ -29,7 +29,7 @@ if [[ $(hostname -s) = zco* ]]; then
 	#monitors
   #xrandr --output DP1-1 --auto --above eDP1 --primary
   #xrandr --output DP1-2 --auto --right-of DP1-1
-  xrandr --output eDP1 --mode 1366x768 --pos 1232x1080 --rotate normal
+  xrandr --output eDP1 --mode 1366x768 --pos 96x1080 --rotate normal
   xrandr --output DP1-2 --mode 1920x1080 --pos 1920x0 --rotate normal
   xrandr --output DP1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 fi
