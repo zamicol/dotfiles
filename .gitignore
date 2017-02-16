@@ -8,6 +8,7 @@ vim
 prelude
 quicktile
 fonts
+test
 
 # Ignore profile contents but keep the folder.  
 profile/*
