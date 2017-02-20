@@ -346,7 +346,7 @@ echo "goroot: $GOROOT"
 # See https://github.com/atom/apm/issues/170
 if [[ ! -d "$HOME/.atom/packages/go-plus" ]]
 then
-    apm install go-plus minimap symbols-tree-view atom-beautify file-icons
+    apm install go-plus minimap symbols-tree-view atom-beautify file-icons hard-wrap
 fi
 
 ####################
