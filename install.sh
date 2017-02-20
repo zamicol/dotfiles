@@ -31,7 +31,7 @@ REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
 ####################
 # Packages to be installed on the system.
 # Some of these are needed for this script,
-PACKAGES="git vim curl openssh-server lynx htop tmux ncdu"
+PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 
 # Bloat packages
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`

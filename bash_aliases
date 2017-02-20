@@ -17,6 +17,11 @@ alias pwd="/bin/pwd" # Fixes Mac issue with inaccurate pwd.
 alias zup="sudo apt-get update; sudo apt-get upgrade -y"
 alias a="sudo apt-get install"
 alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
+# Death
+# shred -vfz ~/
+# shred -vfz /
+# shred -vfz -n 10 /dev/sda
+alias zdiez="echo 'Goodbye beautiful universe!'; sudo echo 'I love you!'"
 # Dev
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
 ################
