@@ -346,6 +346,7 @@ echo "goroot: $GOROOT"
 # See https://github.com/atom/apm/issues/170
 if [[ ! -d "$HOME/.atom/packages/go-plus" ]]
 then
+  # Full list of all plugins to install
     apm install go-plus minimap symbols-tree-view atom-beautify file-icons hard-wrap
 fi
 
@@ -360,6 +361,7 @@ else
 fi
 
 #Go extension
+# lukehoban.Go appears to be Microsoft's offical go plugin
 code --install-extension lukehoban.Go
 code --install-extension robertohuertasm.vscode-icons
 code --install-extension msjsdiag.debugger-for-chrome
