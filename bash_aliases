@@ -9,7 +9,7 @@ alias la='ls -A'
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
 
-alias zup="sudo apt-get update; sudo apt-get upgrade -y"
+alias zup="sudo apt-get update; sudo apt-get -y upgrade; sudo apt autoremove -y"
 alias a="sudo apt-get install"
 alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
 # Death
