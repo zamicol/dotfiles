@@ -1,19 +1,14 @@
-# Alias file
-#
-# -a all, -l long listing, -F append indicator (one of */=>@|) to entries
-# -C Columns, -A almost all
-# Old ls:
-# alias l='ls -alF'
-# List with count printed at bottom.
-listWithCount() {
-    ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[d|\-]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^\-/) {f+=1} print $0} END {print "Nodes:"i " Files:"f " Dirs:"d }'
-}
+# bash_aliases.sh
+
+################
+# Aliases
+################
 alias l=listWithCount
 alias ll='ls -CF'
 alias la='ls -A'
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
-alias pwd="/bin/pwd" # Fixes Mac issue with inaccurate pwd.
+
 alias zup="sudo apt-get update; sudo apt-get upgrade -y"
 alias a="sudo apt-get install"
 alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
@@ -24,6 +19,12 @@ alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
 alias zdiez="echo 'Goodbye beautiful universe!'; sudo echo 'I love you!'"
 # Dev
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
+
+################
+# Fixes
+################
+alias pwd="/bin/pwd" # Fixes Mac issue with inaccurate pwd.
+
 ################
 ################
 # Applications
@@ -33,6 +34,7 @@ alias dock=". ~/.dotfiles/dock.sh"
 alias undock=". ~/.dotfiles/undock.sh"
 alias sha256="sha256sum"
 alias sha="sha256sum"
+alias sha64=sha64func
 alias bitcoin="bitcoin-qt"
 alias node="nodejs"
 alias b="xbacklight -set"
@@ -42,6 +44,7 @@ alias extract="x"
 # echo "hello" | clipset
 alias clipset='xclip -selection c'
 alias clipget='xclip -selection clipboard -o'
+
 ################
 # Git
 ################
@@ -49,6 +52,23 @@ alias clipget='xclip -selection clipboard -o'
 # push to all remotes, "multiple-push"
 alias gitpp='git pull && git push'
 alias mpush='git remote | xargs -L1 git push --all'
+
+################
+# Functions
+################
+# -a all, -l long listing, -F append indicator (one of */=>@|) to entries
+# -C Columns, -A almost all
+# Old ls:
+# alias l='ls -alF'
+# List with count printed at bottom.
+listWithCount() {
+  ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[d|\-]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^\-/) {f+=1} print $0} END {print "Nodes:"i " Files:"f " Dirs:"d }'
+}
+
+# One liner for getting the sha256 sum as base64.
+sha64func(){
+  sha $1 | awk '{print $1}'| xxd -r -p | base64
+}
 
 # Unzip using `x <filename>`
 # http://superuser.com/a/44187
