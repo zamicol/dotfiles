@@ -35,7 +35,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 
 # Bloat packages
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools bitcoin-qt nodejs"
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools bitcoin-qt nodejs synaptic"
 
 # i3wm
 # and desktop environment
@@ -346,6 +346,7 @@ echo "goroot: $GOROOT"
 # See https://github.com/atom/apm/issues/170
 if [[ ! -d "$HOME/.atom/packages/go-plus" ]]
 then
+  # Full list of all plugins to install
     apm install go-plus minimap symbols-tree-view atom-beautify file-icons hard-wrap
 fi
 
@@ -360,6 +361,7 @@ else
 fi
 
 #Go extension
+# lukehoban.Go appears to be Microsoft's offical go plugin
 code --install-extension lukehoban.Go
 code --install-extension robertohuertasm.vscode-icons
 code --install-extension msjsdiag.debugger-for-chrome
