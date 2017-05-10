@@ -7,11 +7,25 @@ source $HOME/.profile
 # zlap
 if [[ $(hostname -s) = zlap ]]; then
   xrandr --output eDP1 --auto --primary
+  ######
   # Office
+  ######
+
   # B286HK Monitor
+  # 4k is being stupid
   #xrandr --output DP2 --rate 30 --mode 3840x2160 --right-of eDP1
-  xrandr --output DP2 --rate 60 --mode 1920x1080 --right-of eDP1 --primary
-  xrandr --output HDMI1 --right-of DP2
+
+  # Not working, dock hardware bad?
+  #randr --output DP2 --rate 60 --mode 1920x1080 --right-of eDP1 --primary
+
+  #Asus
+  #with 4k
+  #xrandr --output HDMI1 --right-of DP2
+  #4k workaround
+  xrandr --output HDMI1 --auto --right-of eDP1
+
+
+
   # 3840x2160 at 60hz only over Display Port
   # 30hxz max over HDMI
   #xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1
