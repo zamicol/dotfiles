@@ -35,7 +35,10 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 
 # Bloat packages
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools bitcoin-qt nodejs synaptic"
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip dconf-tools dconf-tools nodejs synaptic"
+
+# Desktop Applications
+PACKAGES="$PACKAGES inkscape"
 
 # i3wm
 # and desktop environment
