@@ -24,7 +24,7 @@ DOTFILES=`cd "$DOTFILES"; pwd`
 ####################
 # Repo ppa's
 ####################
-REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
+#REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
 
 ####################
 # Package Variables
@@ -199,10 +199,14 @@ echo "Setting up ssh"
 if [ ! -d $HOME/.ssh ]; then
   chmod 700 $HOME/.ssh
 fi
-if [ ! -f $HOME/.ssh/id_rsa ]; then
+# ed
+if [ ! -f $HOME/.ssh/id_ed25519 ]; then
   ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519
-  #ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
 fi
+# RSA
+# if [ ! -f $HOME/.ssh/id_rsa ]; then
+#   #ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
+# fi
 if [ ! -f $HOME/.ssh/authorized_keys ]; then
   cp $DOTFILES/authorized_keys $HOME/.ssh/authorized_keys
 fi
@@ -347,10 +351,12 @@ echo "goroot: $GOROOT"
 ####################
 # Workaround until apm fixes reinstall of already installed.
 # See https://github.com/atom/apm/issues/170
-if [[ ! -d "$HOME/.atom/packages/go-plus" ]]
+if [ ! -d "$HOME/.atom/packages/go-plus" ]
 then
   # Full list of all plugins to install
     apm install go-plus minimap symbols-tree-view atom-beautify file-icons hard-wrap
+  else
+    echo "Atom package go-plus installed, not trying to install other atom packages.";
 fi
 
 ####################
@@ -358,16 +364,15 @@ fi
 ####################
 
 if [ hash code 2>/dev/null ]; then
-  echo >&2 "Code not installed.";
-else
   echo >&2 "Code installed.";
+  #Go extension
+  # lukehoban.Go appears to be Microsoft's offical go plugin
+  code --install-extension lukehoban.Go
+  code --install-extension robertohuertasm.vscode-icons
+  code --install-extension msjsdiag.debugger-for-chrome
+  code --install-extension dbaeumer.vscode-eslint
+  code --install-extension HookyQR.beautify
+  code --install-extension ronnidc.nunjucks
+else
+  echo >&2 "Code not installed.";
 fi
-
-#Go extension
-# lukehoban.Go appears to be Microsoft's offical go plugin
-code --install-extension lukehoban.Go
-code --install-extension robertohuertasm.vscode-icons
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension HookyQR.beautify
-code --install-extension ronnidc.nunjucks

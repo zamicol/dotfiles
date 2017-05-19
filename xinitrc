@@ -3,9 +3,9 @@
 #    other programs calling xinit
 
 xmodmap $HOME/.dotfiles/xmodmap 2>/dev/null
-synclient CoastingSpeed=0
-synclient VertEdgeScroll=0
-synclient HorizEdgeScroll=0
+synclient CoastingSpeed=0 2>/dev/null
+synclient VertEdgeScroll=0 2>/dev/null
+synclient HorizEdgeScroll=0 2>/dev/null
 #xbacklight -set 100
 
 # Faster key repeat and delay
