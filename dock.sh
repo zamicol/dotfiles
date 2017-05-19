@@ -34,8 +34,11 @@ fi
 
 # zbox
 if [[ $(hostname -s) = zbox ]]; then
- xrandr --output DFP1 --auto --primary
- xrandr --output DFP5 --auto --pos 3840x500
+  # xrandr --output DFP1 --auto --primary
+  # xrandr --output DFP5 --auto --pos 3840x500
+  echo "Dock Setting for zbox"
+  xrandr --output DisplayPort-0 --auto --primary
+  xrandr --output DVI-1 --auto --left-of DisplayPort-0
 fi
 
 # Work computer
@@ -53,4 +56,4 @@ fi
 ~/.xinitrc
 
 # Set numlock to on.
-for t in /dev/tty[0-9]*; do setleds -D +num <$t; done
+for t in /dev/tty[0-9]*; do setleds -D +num <$t; done 2>/dev/null
