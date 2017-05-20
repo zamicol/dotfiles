@@ -11,7 +11,7 @@ alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
 
 alias zup="sudo apt-get update; sudo apt-get -y upgrade; sudo apt autoremove -y"
-alias a="sudo apt-get install"
+alias a="sudo apt-get install -y "
 alias zsleep="sudo pm-suspend; mate-screensaver-command -l"
 # Death
 # shred -vfz ~/
