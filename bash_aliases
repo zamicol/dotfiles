@@ -56,6 +56,7 @@ alias pwd="/bin/pwd" # Fixes Mac issue with inaccurate pwd.
 # mpush for git
 # push to all remotes, "multiple-push"
 alias gitpp='git pull && git push'
+alias gitp=gitpp
 alias mpush='git remote | xargs -L1 git push --all'
 
 ################
