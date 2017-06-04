@@ -36,9 +36,9 @@ fi
 if [[ $(hostname -s) = zbox ]]; then
   # xrandr --output DFP1 --auto --primary
   # xrandr --output DFP5 --auto --pos 3840x500
-  echo "Dock Setting for zbox"
-  xrandr --output DisplayPort-0 --auto --primary
-  xrandr --output DVI-1 --auto --left-of DisplayPort-0
+  echo "Docking for zbox"
+  xrandr --output HDMI-0 --auto --primary
+  xrandr --output DVI-0 --auto --right-of HDMI-0
 fi
 
 # Work computer

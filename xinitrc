@@ -11,3 +11,6 @@ synclient HorizEdgeScroll=0 2>/dev/null
 # Faster key repeat and delay
 # Stolen from http://unix.stackexchange.com/a/216238/40449
 xset r rate 250 60
+
+# Always turn on numblock.  `numlockx` must be installed.  
+numlockx
