@@ -39,7 +39,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator"
 
 # Desktop Applications
-PACKAGES="$PACKAGES inkscape vlc"
+PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop"
 
 # i3wm
 # and desktop environment
