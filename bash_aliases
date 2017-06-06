@@ -4,7 +4,7 @@
 # Aliases
 ################
 alias e="exit"
-alias q="quit"
+alias q="exit"
 alias l=listWithCount
 alias ll='ls -CF'
 alias la='ls -A'
