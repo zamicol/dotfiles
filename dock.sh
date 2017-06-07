@@ -37,8 +37,8 @@ if [[ $(hostname -s) = zbox ]]; then
   # xrandr --output DFP1 --auto --primary
   # xrandr --output DFP5 --auto --pos 3840x500
   echo "Docking for zbox"
-  xrandr --output DP-1 --auto --primary
-  xrandr --output DP-3 --auto --right-of DP-1
+  xrandr --output DP-4 --auto --primary
+  xrandr --output DP-0 --auto --right-of DP-4
 fi
 
 # Work computer
