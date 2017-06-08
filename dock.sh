@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
+##################
+#
+#
+# -------->     arandr     <--------------
+#
+#
 # Use `arandr` to do this graphically
+####################
+
 
 source $HOME/.profile
 
@@ -24,8 +32,6 @@ if [[ $(hostname -s) = zlap ]]; then
   #4k workaround
   xrandr --output HDMI1 --auto --right-of eDP1
 
-
-
   # 3840x2160 at 60hz only over Display Port
   # 30hxz max over HDMI
   #xrandr --output HDMI1 --mode 1920x1080 --right-of eDP1
@@ -37,8 +43,8 @@ if [[ $(hostname -s) = zbox ]]; then
   # xrandr --output DFP1 --auto --primary
   # xrandr --output DFP5 --auto --pos 3840x500
   echo "Docking for zbox"
-  xrandr --output DP-4 --auto --primary
-  xrandr --output DP-0 --auto --right-of DP-4
+  xrandr --output HDMI-0 --auto --primary
+  xrandr --output DP-0 --auto --right-of HDMI-0
 fi
 
 # Work computer

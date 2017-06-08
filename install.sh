@@ -12,6 +12,7 @@
 # Setup
 ###############
 ###############
+
 # If using bash
 # -e Exit if errors
 # -u Exit if variable is unset
@@ -35,8 +36,9 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 
 # Bloat packages
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
-# numlockx is for foolproof turning on numlock.  Command: `numlockx`
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator"
+# `numlockx` is for foolproof turning on numlock.
+# `pavucontrol` is awesome for sound management.
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol"
 
 # Desktop Applications
 PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop"
