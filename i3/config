@@ -225,7 +225,7 @@ exec --no-startup-id mate-screensaver
 bindsym $mod+Control+l exec mate-screensaver-command -l
 
 # Compton for compositing
-# exec --no-startup-id compton --config ~/.dotfiles/compton.conf -b
+exec --no-startup-id compton --config ~/.dotfiles/compton.conf -b
 
 # Desktop background.
 # Sleep first so monitor setting have a chance to take affect first.

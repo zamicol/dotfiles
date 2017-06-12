@@ -41,7 +41,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol"
 
 # Desktop Applications
-PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop"
+PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop gimp"
 
 # i3wm
 # and desktop environment
