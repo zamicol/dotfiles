@@ -342,9 +342,14 @@ fi
 ####################
 # Install manually via https://golang.org/doc/install
 # /usr/local/go/bin
-echo "Golang setup"
-wget https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.8.3.linux-amd64.tar.gz
+if ! hash go 2>/dev/null; then
+	echo "Installing Go"
+	wget https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
+	sudo tar -C /usr/local -xzf go1.8.3.linux-amd64.tar.gz
+else
+	echo "Go already installed"
+fi
+
 # $GOPATH should be set in .profile
 echo "gopath: $GOPATH"
 echo "goroot: $GOROOT"
