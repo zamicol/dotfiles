@@ -2,9 +2,7 @@
 
 ##################
 #
-#
 # -------->     arandr     <--------------
-#
 #
 # Use `arandr` to do this graphically
 ####################
@@ -43,13 +41,24 @@ if [[ $(hostname -s) = zbox ]]; then
   # xrandr --output DFP1 --auto --primary
   # xrandr --output DFP5 --auto --pos 3840x500
   echo "Docking for zbox"
-  xrandr --output HDMI-0 --auto --primary
-  xrandr --output DP-0 --auto --right-of HDMI-0
+  xrandr --output DP-2 --primary --mode 3840x2160 --pos 0x1080 --rotate normal
+  xrandr --output DP-0 --mode 3840x2160 --pos 3840x1080 --rotate normal
+  xrandr --output HDMI-0 --mode 1920x1080 --pos 2880x0 --rotate normal
+  # xrandr --output DP-2 --auto --primary
+  # xrandr --output DP-0 --auto --right-of DP-2
+
+  i3-msg workspace 1 && i3-msg move workspace to output DP-2
+  i3-msg workspace 2 && i3-msg move workspace to output DP-0
+  i3-msg workspace 3 && i3-msg move workspace to output HDMI-0  
+  # i3-msg move workspace 1 to DP-2
+  # i3-msg move workspace 2 to DP-0
+  # i3-msg move workspace 3 to HDMI-0
+
 fi
 
 # Work computer
 if [[ $(hostname -s) = zco* ]]; then
-	#monitors
+  #monitors
   #xrandr --output DP1-1 --auto --above eDP1 --primary
   #xrandr --output DP1-2 --auto --right-of DP1-1
 
