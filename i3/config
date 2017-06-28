@@ -241,6 +241,8 @@ exec --no-startup-id nm-applet
 # Supposidly remove the --no-startup-id for it to appear on all workspaces
 # but doesn't seem to work.
 exec mate-volume-control-applet
+# bluetooth
+blueman-applet
 
 
 ####################
@@ -253,3 +255,9 @@ bindsym $mod+m exec atom
 bindsym $mod+n exec caja
 bindsym --release $mod+x exec xkill
 bindsym --release $mod+z exec mate-screenshot -a
+
+
+
+###################
+# Workspaces
+###################
