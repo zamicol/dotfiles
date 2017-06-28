@@ -49,11 +49,11 @@ if [[ $(hostname -s) = zbox ]]; then
 
   i3-msg workspace 1 && i3-msg move workspace to output DP-2
   i3-msg workspace 2 && i3-msg move workspace to output DP-0
-  i3-msg workspace 3 && i3-msg move workspace to output HDMI-0  
+  i3-msg workspace 3 && i3-msg move workspace to output HDMI-0
+  i3-msg workspace 1
   # i3-msg move workspace 1 to DP-2
   # i3-msg move workspace 2 to DP-0
   # i3-msg move workspace 3 to HDMI-0
-
 fi
 
 # Work computer

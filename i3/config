@@ -242,7 +242,7 @@ exec --no-startup-id nm-applet
 # but doesn't seem to work.
 exec mate-volume-control-applet
 # bluetooth
-blueman-applet
+exec --no-startup-id blueman-applet
 
 
 ####################
