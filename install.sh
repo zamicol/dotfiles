@@ -43,8 +43,8 @@ PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools 
 # Desktop Applications
 PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop gimp"
 
-# Bluetooth
-PACKAGES="$PACKAGES bluetooth blueman pulseaudio-module-bluetooth"
+# Audio
+PACKAGES="$PACKAGES bluetooth blueman pulseaudio-module-bluetooth gnome-sound-recorder"
 
 # i3wm
 # and desktop environment
