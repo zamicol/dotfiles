@@ -10,6 +10,9 @@ quicktile
 fonts
 test
 
+#Ignore archives.  Allows to download golang.  
+*.tar.gz
+
 # Ignore profile contents but keep the folder.  
 profile/*
 
