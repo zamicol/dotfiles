@@ -13,8 +13,8 @@ alias zsr="sudo shutdown -r now"
 
 alias zup="sudo apt-get update; sudo apt-get -y upgrade; sudo apt autoremove -y"
 alias a="sudo apt-get install -y "
-alias zsleep="mate-screensaver-command -l; sudo pm-suspend"
-alias zhib="mate-screensaver-command -l; sudo systemctl hibernate"
+alias zsleep="mate-screensaver-command -l; echo 'sleeping'; sudo pm-suspend"
+alias zhib="mate-screensaver-command -l; echo 'hibernating'; sudo systemctl hibernate"
 # Death
 # shred -vfz ~/
 # shred -vfz /
