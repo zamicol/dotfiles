@@ -222,7 +222,7 @@ fi
 # private
 ####################
 cd $DOTFILES
-git clone git@bitbucket.org:zamicol/private.git
+git clone git@github.com:zamicol/private.git
 cd private
 git pull
 cd $DOTFILES
