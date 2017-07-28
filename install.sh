@@ -79,7 +79,7 @@ REMOVEPACKAGES="thunderbird"
 SYMLINKS="bashrc bash_aliases bash_aliases_private xsession profile profile_private xinitrc gitconfig fonts"
 # Create these dirs if not exist.
 DIRS="$HOME/dev/go $HOME/.config/i3 $HOME/.ssh $HOME/.config/i3status \
-$HOME/.config/i3blocks $DOTFILES/fonts"
+$HOME/.config/i3blocks $DOTFILES/fonts $HOME/dev/go/src/github.com/zamicol"
 
 
 ####################

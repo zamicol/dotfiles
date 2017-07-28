@@ -35,6 +35,7 @@ alias esha=esha64func
 ################
 # Applications
 ################
+alias s=". ~/.dotfiles/sync.sh"
 alias dock=". ~/.dotfiles/dock.sh"
 alias undock=". ~/.dotfiles/undock.sh"
 alias bitcoin="bitcoin-qt"
