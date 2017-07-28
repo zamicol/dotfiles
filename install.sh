@@ -389,3 +389,12 @@ if [ hash code 2>/dev/null ]; then
 else
   echo >&2 "Code not installed.";
 fi
+
+
+
+#######################
+# Projects
+######################
+cd $ZAMICOL
+git clone https://github.com/zamicol/cypherwallet
+git clone https://github.com/zamicol/cypherpass
