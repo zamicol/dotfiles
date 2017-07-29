@@ -170,8 +170,12 @@ case $(uname -s) in
 esac
 
 
-# Remove
+# Remove unwanted packages
 sudo apt-get -y remove $REMOVEPACKAGES
+
+# Upgrade.
+# Do this last, after updating, installing, removing.
+sudo apt-get -y upgrade
 
 ####################
 # git
@@ -396,5 +400,5 @@ fi
 # Projects
 ######################
 cd $ZAMICOL
-git clone https://github.com/zamicol/cypherwallet
-git clone https://github.com/zamicol/cypherpass
+git clone git@github.com:zamicol/cypherpass.git
+git clone git@github.com:zamicol/cypherwallet.git
