@@ -212,8 +212,7 @@ then
     sudo apt-get -y upgrade
   else
     printf "Update occured within last 10 minutes.
-**NOT** updating, installing, or upgrading
-    "
+**NOT** updating, installing, or upgrading\n\n"
 fi
 
 
