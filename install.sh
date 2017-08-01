@@ -7,6 +7,11 @@
 # - To change look and feel, use lxappearance
 # - Install Go.  The $GOPATH is set by this script.
 
+printf "############
+# Running Zami's .dotfiles install script
+############
+"
+
 ###############
 ###############
 # Setup
@@ -145,43 +150,77 @@ for r in $REPOS; do
   echo "Adding repo $r"
   sudo add-apt-repository $r -y
 done
-# Update packages that are now available
-sudo apt-get update
 
 
-####################
-# Install Packages
-####################
-echo "Installing packages $PACKAGES"
-case $(uname -s) in
-  OpenBSD)
-  pkg_add $PACKAGES
-  ;;
-  Linux)
-  if [ -e /etc/redhat-release ]; then
-    sudo yum install $PACKAGES
+###########################
+#
+# Update
+# Install
+# Upgrade
+#
+##########################
+
+# only update if update hasn't been done in the last 10 minutes.
+# allows the install srcript to be run quickly frequently.
+fileDate=$(date +%s -r /var/cache/apt/pkgcache.bin)
+tiggerDate=$(date --date='-10 minutes' +%s)
+currentDate=$(date +%s)
+
+
+printf "
+############
+# Updating, installing, and upgrading
+############
+Updated at:$fileDate   Next update: $tiggerDate  Now:$currentDate
+Time to update: $(($fileDate-$tiggerDate))
+"
+
+if [  $fileDate -le $tiggerDate ];
+then
+  printf "Updating\n"
+  # Update
+  # packages that are now available with additional repos
+  # update repo info
+  sudo apt-get update
+
+  # Install
+  # new packages
+  echo "Installing packages $PACKAGES"
+  case $(uname -s) in
+    OpenBSD)
+    pkg_add $PACKAGES
+    ;;
+    Linux)
+    if [ -e /etc/redhat-release ]; then
+      sudo yum install $PACKAGES
+    else
+      sudo apt-get -y --ignore-missing install $PACKAGES
+    fi
+    ;;
+    *)
+    echo 'system unknown.  Not installing packages'
+    ;;
+  esac
+
+    # Remove
+    # unwanted packages
+    sudo apt-get -y remove $REMOVEPACKAGES
+    sudo apt autoremove -y
+
+    # Upgrade.
+    # Do this last, after updating, installing, removing.
+    sudo apt-get -y upgrade
   else
-    sudo apt-get -y --ignore-missing install $PACKAGES
-  fi
-  ;;
-  *)
-  echo 'system unknown.  Not installing packages'
-  ;;
-esac
+    printf "Update occured within last 10 minutes.
+**NOT** updating, installing, or upgrading
+    "
+fi
 
-
-# Remove unwanted packages
-sudo apt-get -y remove $REMOVEPACKAGES
-
-# Upgrade.
-# Do this last, after updating, installing, removing.
-sudo apt-get -y upgrade
 
 ####################
 # git
 ####################
 git config --global core.excludesfile "$DOTFILES/gitignore_global"
-
 
 ####################
 # i3

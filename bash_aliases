@@ -10,8 +10,7 @@ alias ll='ls -CF'
 alias la='ls -A'
 alias zsd="sudo shutdown -h"
 alias zsr="sudo shutdown -r now"
-alais zinstall=". ~/.dotfiles/install.sh"
-
+alias zinstall=". ~/.dotfiles/install.sh"
 alias zup="sudo apt-get update; sudo apt-get -y upgrade; sudo apt autoremove -y"
 alias a="sudo apt-get install -y "
 alias zsleep="mate-screensaver-command -l; echo 'sleeping'; sudo pm-suspend"
