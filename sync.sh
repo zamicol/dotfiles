@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+pwd=$(pwd)
 
 # Dotfiles
 cd ~/.dotfiles
@@ -25,3 +25,6 @@ cd $CYPHERPASS
 git add .
 git commit -a -m 'sync script'
 gitpp
+
+# Change back to original directory
+pwd $pwd
