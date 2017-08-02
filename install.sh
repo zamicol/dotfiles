@@ -440,3 +440,4 @@ fi
 cd $ZAMICOL
 git clone git@github.com:zamicol/cypherpass.git
 git clone git@github.com:zamicol/cypherwallet.git
+git clone git@github.com:zamicol/jsonflags.git
