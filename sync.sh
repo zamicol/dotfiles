@@ -27,4 +27,4 @@ git commit -a -m 'sync script'
 gitpp
 
 # Change back to original directory
-pwd $pwd
+cd $pwd
