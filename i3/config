@@ -179,7 +179,7 @@ bar {
   position top
   tray_output primary
   colors {
-    statusline #333333
+    statusline #ffffff
     # medium blue
     #background #07495F
 
@@ -187,7 +187,10 @@ bar {
     #background #000123
 
     #So I can see the icons
-    background #f2f2f2
+    #background #f2f2f2
+
+		# Same color as terminal
+		background #0C0A2E
 
     # light gray
     #background #E5E5E6
