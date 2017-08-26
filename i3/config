@@ -232,7 +232,7 @@ exec --no-startup-id compton --config ~/.dotfiles/compton.conf -b
 
 # Desktop background.
 # Sleep first so monitor setting have a chance to take affect first.
-exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/Img/Swiss_Jungfrau_mountains.jpg
+exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/Img/linuxmint-sonya/rlukeman_waterfall.jpg
 
 ####################
 # Applets and Icons
