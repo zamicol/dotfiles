@@ -253,6 +253,7 @@ exec --no-startup-id blueman-applet
 ####################
 bindsym $mod+c exec google-chrome
 bindsym $mod+Control+c exec chromium-browser
+bindsym $mod+Control+c exec firefox
 bindsym $mod+o exec gnome-calculator
 bindsym $mod+m exec atom
 bindsym $mod+n exec caja
