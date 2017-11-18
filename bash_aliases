@@ -14,7 +14,8 @@ alias zinstall=". ~/.dotfiles/install.sh"
 alias zup="sudo apt-get update; sudo apt-get -y upgrade; sudo apt autoremove -y"
 alias a="sudo apt-get install -y "
 alias zsleep="mate-screensaver-command -l; echo 'sleeping'; sudo pm-suspend"
-alias zhib="s; mate-screensaver-command -l; echo 'hibernating'; sudo systemctl hibernate"
+alias zhib="mate-screensaver-command -l; echo 'hibernating'; sudo systemctl hibernate"
+alias zhibs="s; mate-screensaver-command -l; echo 'hibernating'; sudo systemctl hibernate"
 # Death
 # shred -vfz ~/
 # shred -vfz /
