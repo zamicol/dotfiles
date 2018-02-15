@@ -32,6 +32,8 @@ DOTFILES=`cd "$DOTFILES"; pwd`
 ####################
 #REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
 
+REPOS="ppa:webupd8team/atom"
+
 ####################
 # Package Variables
 ####################
@@ -134,16 +136,16 @@ done
 #    npm install --prefix ~/dev/node_bin <package>
 #
 # Add key
-cat $DOTFILES/nodesource.gpg.key | sudo apt-key add -
-# Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
-NODEVERSION=node_7.x
-# The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
-# - For Debian distributions: wheezey, jessie, sid, etc...
-# - For Ubuntu distributions: precise, trusty, xenial, etc...
-# - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
-DISTRO="$(lsb_release -s -c)"
-echo "deb https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-echo "deb-src https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+# cat $DOTFILES/nodesource.gpg.key | sudo apt-key add -
+# # Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
+# NODEVERSION=node_7.x
+# # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
+# # - For Debian distributions: wheezey, jessie, sid, etc...
+# # - For Ubuntu distributions: precise, trusty, xenial, etc...
+# # - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
+# DISTRO="$(lsb_release -s -c)"
+# echo "deb https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+# echo "deb-src https://deb.nodesource.com/$NODEVERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
 
 # Add ppa's
 for r in $REPOS; do
@@ -447,3 +449,4 @@ git clone git@github.com:zamicol/cypherpass.git
 git clone git@github.com:zamicol/cypherwallet.git
 git clone git@github.com:zamicol/jsonflags.git
 git clone git@github.com:zamicol/style.git
+git clone git@github.com:zamicol/tool.git

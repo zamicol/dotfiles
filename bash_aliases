@@ -28,6 +28,11 @@ alias zgo="cd ~/dev/go/src/github.com/zamicol"
 ################
 # Crypto
 ################
+# SHA256 example:
+#
+#    echo -n 'bob' | sha
+#
+# don't forget the newline in echo.  Use "-n"
 alias sha256="sha256sum"
 alias sha="sha256sum"
 alias sha64=sha64func
@@ -77,11 +82,26 @@ listWithCount() {
  ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[d|\-]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^\-/) {f+=1} print $0} END {print "Files:"f " Dirs:"d " Nodes:"i  }'
 }
 
-# One liner for getting the sha256 sum as base64.
+# sha64func is a one liner for getting the sha256 sum as base64.
+# Example:
+#
+#    echo -n 'bob' | sha64
+#
+# Outputs:
+#
+#     gbY32PzSxtpjWeaWMROhFw3nleS3JbhNHgtM/Z7FjOk=
 sha64func(){
  sha $1 | awk '{print $1}'| xxd -r -p | base64
 }
 
+# esha64func is for "echo" sha 64.
+# Eample:
+#
+#     esha bob
+#
+# Outputs:
+#
+#     gbY32PzSxtpjWeaWMROhFw3nleS3JbhNHgtM/Z7FjOk=
 esha64func(){
  echo -n "$1" | sha64func
 }
