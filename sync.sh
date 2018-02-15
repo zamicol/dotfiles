@@ -21,6 +21,13 @@ git commit -a -m 'sync script'
 gitpp
 
 # Cypherpass
+# Wiki first
+cd $CYPHERPASS/wiki
+git add .
+git commit -a -m 'sync script'
+gitpp
+
+# Main Cypherpass repo
 cd $CYPHERPASS
 git add .
 git commit -a -m 'sync script'
