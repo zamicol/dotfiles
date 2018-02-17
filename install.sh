@@ -416,6 +416,11 @@ then
     echo "Atom package go-plus installed, not trying to install other atom packages.";
 fi
 
+# Fix the gawd damn config file to use tabs and not spaces.
+
+rm $HOME/.atom/config.cson
+if ln -s $DOTFILES/atom_config.cson $HOME/.atom/config.cson
+
 ####################
 # VS Code (Visual Studio)
 ####################
