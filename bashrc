@@ -7,8 +7,14 @@ if [ -f ~/.dotfiles/private/profile ]; then
     . ~/.dotfiles/private/profile
 fi
 
-# Do this again here, to make sure.
-#go
+########
+# Environmental Variables
+########
+#
+# See private/profile for more.
+#
+# Go
+# Might be duplicate from elsewhere to guarantee running
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
@@ -19,11 +25,11 @@ export PATH=$PATH:~/dev/node_bin/node_modules/.bin
 
 export EDITOR=/usr/bin/vim
 
-#set default editor.
+# Set default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-#Explicitly set prompt
+# Explicitly set prompt
 export PS1='\u@\H:\w$'
 
 # set PATH so it includes user's private bin if it exists
@@ -31,7 +37,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-#xinitrc
+# xinitrc
 sh $HOME/.dotfiles/xinitrc
 
 # This really should be in profile. Fix desktop environments doing it wrong.
