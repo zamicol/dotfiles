@@ -230,9 +230,9 @@ bindsym $mod+Control+l exec mate-screensaver-command -l
 # Compton for compositing
 exec --no-startup-id compton --config ~/.dotfiles/compton.conf -b
 
-# Desktop background.
+# Desktop background wallpaper.
 # Sleep first so monitor setting have a chance to take affect first.
-exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/Img/linuxmint-sonya/rlukeman_waterfall.jpg
+exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/img/rawson_lake_4097_2969.jpg
 
 ####################
 # Applets and Icons
