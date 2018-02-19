@@ -391,8 +391,8 @@ fi
 # /usr/local/go/bin
 if ! hash go 2>/dev/null; then
 	echo "Installing Go"
-	wget https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
-	sudo tar -C /usr/local -xzf go1.8.3.linux-amd64.tar.gz
+	wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
+	sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 else
 	echo "Go already installed"
 fi
