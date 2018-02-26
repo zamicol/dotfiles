@@ -416,24 +416,15 @@ then
     echo "Atom package go-plus installed, not trying to install other atom packages.";
 fi
 
-# Fix the gawd damn config file to use tabs and not spaces.
+# Fix the gawd darmn config file to use tabs and not spaces.
 rm $HOME/.atom/config.cson
 ln -s $DOTFILES/atom_config.cson $HOME/.atom/config.cson
 
 ####################
-# VS Code (Visual Studio)
+# VS Code (Visual Studio Code)
 ####################
-
 if [ hash code 2>/dev/null ]; then
   echo >&2 "Code installed.";
-  #Go extension
-  # lukehoban.Go appears to be Microsoft's offical go plugin
-  code --install-extension lukehoban.Go
-  code --install-extension robertohuertasm.vscode-icons
-  code --install-extension msjsdiag.debugger-for-chrome
-  code --install-extension dbaeumer.vscode-eslint
-  code --install-extension HookyQR.beautify
-  code --install-extension ronnidc.nunjucks
 else
   echo >&2 "Code not installed. Installing code";
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -441,7 +432,19 @@ else
   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
   sudo apt-get update
   sudo apt-get install code
+
+	#Go extension
+	# lukehoban.Go appears to be Microsoft's offical go plugin
+	code --install-extension lukehoban.Go
+	code --install-extension robertohuertasm.vscode-icons
+	code --install-extension msjsdiag.debugger-for-chrome
+	code --install-extension dbaeumer.vscode-eslint
+	code --install-extension HookyQR.beautify
+	code --install-extension ronnidc.nunjucks
 fi
+
+# Link all setting files
+ln -s $DOTFILES/visual_studio_code/User/* $HOME/.config/Code/User/
 
 
 
