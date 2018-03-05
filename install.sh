@@ -444,7 +444,7 @@ else
 fi
 
 # Link all setting files
-ln -s $DOTFILES/visual_studio_code/User/* $HOME/.config/Code/User/
+ln -s $DOTFILES/private/visual_studio_code/User/* $HOME/.config/Code/User/
 
 
 
