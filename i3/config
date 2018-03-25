@@ -256,6 +256,7 @@ bindsym $mod+Control+c exec chromium-browser
 bindsym $mod+Control+f exec firefox
 bindsym $mod+o exec gnome-calculator
 bindsym $mod+m exec atom
+bindsym $mod+b exec code
 bindsym $mod+n exec caja
 bindsym --release $mod+x exec xkill
 bindsym --release $mod+z exec mate-screenshot -a
