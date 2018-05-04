@@ -1,2 +1,0 @@
-// Put this in /etc/sudoers
-z ALL=(ALL) NOPASSWD:ALL

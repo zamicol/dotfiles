@@ -42,10 +42,10 @@ alias esha=esha64func
 ################
 # Applications
 ################
-alias s=". ~/.dotfiles/sync.sh"
-alias zsync=". ~/.dotfiles/sync.sh"
-alias dock=". ~/.dotfiles/dock.sh"
-alias undock=". ~/.dotfiles/undock.sh"
+alias s=". ~/.dotfiles/private/sync.sh"
+alias zsync=". ~/.dotfiles/private/sync.sh"
+alias dock=". ~/.dotfiles/private/dock.sh"
+alias undock=". ~/.dotfiles/private/undock.sh"
 alias bitcoin="bitcoin-qt"
 alias node="nodejs"
 alias b="xbacklight -set"
@@ -73,11 +73,12 @@ alias mpush='git remote | xargs -L1 git push --all'
 ################
 # Functions
 ################
+
+# list with count printed at bottom.
 # -a all, -l long listing, -F append indicator (one of */=>@|) to entries
 # -C Columns, -A almost all
 # Old ls:
 # alias l='ls -alF'
-# List with count printed at bottom.
 listWithCount() {
  ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[d|\-]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^\-/) {f+=1} print $0} END {print "Files:"f " Dirs:"d " Nodes:"i  }'
 }
@@ -94,7 +95,7 @@ sha64func(){
  sha $1 | awk '{print $1}'| xxd -r -p | base64
 }
 
-# esha64func is for "echo" sha 64.
+# esha64func is for "echo" sha 64 and aliased to "esha".
 # Eample:
 #
 #     esha bob
