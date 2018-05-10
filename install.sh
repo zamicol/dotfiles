@@ -201,7 +201,7 @@ done
 # only update if update hasn't been done in the last 10 minutes.
 # allows the install srcript to be run quickly frequently.
 fileDate=$(date +%s -r /var/cache/apt/pkgcache.bin)
-tiggerDate=$(date --date='-10 minutes' +%s)
+tiggerDate=$(date --date='-1 minutes' +%s)
 currentDate=$(date +%s)
 
 
