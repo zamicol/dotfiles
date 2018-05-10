@@ -81,7 +81,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
 # `numlockx` is for foolproof turning on numlock.
 # `pavucontrol` is awesome for sound management.
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol unetbootin"
+PACKAGES="$PACKAGES chromium-browser gparted xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol unetbootin"
 
 # Desktop Applications
 PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop gimp"
@@ -108,7 +108,7 @@ PACKAGES="$PACKAGES caja-share"
 PACKAGES="$PACKAGES atom"
 
 # QuickTile packages
-PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
+# PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
 
 # Evil packages
 REMOVEPACKAGES="thunderbird"
@@ -223,7 +223,7 @@ then
 
   # Install
   # new packages
-  echo "Installing packages $PACKAGES"
+  echo "#### Installing packages $PACKAGES"
   case $(uname -s) in
     OpenBSD)
     pkg_add $PACKAGES
@@ -248,10 +248,13 @@ then
     # Upgrade.
     # Do this last, after updating, installing, removing.
     sudo apt-get -y upgrade
+
   else
     printf "Update occured within last 10 minutes.
 **NOT** updating, installing, or upgrading\n\n"
 fi
+
+
 
 
 ####################
