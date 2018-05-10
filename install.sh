@@ -30,14 +30,14 @@ DOTFILES=`cd "$DOTFILES"; pwd`
 ####################
 # Repo ppa's
 ####################
-#REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
-
-REPOS="ppa:webupd8team/atom"
+# Example:
+# REPOS="ppa:webupd8team/atom ppa:bitcoin/bitcoin"
+REPOS="ppa:webupd8team/atom ppa:gezakovacs/ppa"
 
 ####################
 # Package Variables
 ####################
-# Packages to be installed on the system.
+# Core Packages 
 # Some of these are needed for this script,
 PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 
@@ -45,7 +45,7 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
 # `numlockx` is for foolproof turning on numlock.
 # `pavucontrol` is awesome for sound management.
-PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol"
+PACKAGES="$PACKAGES chromium-browser gparted emacs24 xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol unetbootin"
 
 # Desktop Applications
 PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop gimp"
