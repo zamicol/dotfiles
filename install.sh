@@ -27,6 +27,42 @@ DOTFILES="$HOME/.dotfiles"
 # Set absolute path.  This is especially helpful for 'ln -s'.
 DOTFILES=`cd "$DOTFILES"; pwd`
 
+
+####################
+# ssh
+####################
+# Zamicol's ssh keys can be found at https://github.com/zamicol.keys
+echo "Setting up ssh"
+if [ ! -d $HOME/.ssh ]; then
+  chmod 700 $HOME/.ssh
+fi
+# ed
+if [ ! -f $HOME/.ssh/id_ed25519 ]; then
+  ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519
+echo "Created new key.  Add key to github and then continue script"
+cat ~/.ssh/id_ed25519.pub
+exit 1
+fi
+# RSA
+# if [ ! -f $HOME/.ssh/id_rsa ]; then
+#   #ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
+# fi
+if [ ! -f $HOME/.ssh/authorized_keys ]; then
+  cp $DOTFILES/authorized_keys $HOME/.ssh/authorized_keys
+fi
+
+####################
+# private
+####################
+cd $DOTFILES
+git clone git@github.com:zamicol/private.git
+cd private
+git pull
+cd $DOTFILES
+
+
+
+
 ####################
 # Repo ppa's
 ####################
@@ -241,35 +277,6 @@ git clone git://github.com/vivien/i3blocks $HOME/dev/i3blocks
 (cd $HOME/dev/i3blocks/ && make clean debug && sudo make install)
 
 
-####################
-# ssh
-####################
-# Zamicol's ssh keys can be found at https://github.com/zamicol.keys
-echo "Setting up ssh"
-if [ ! -d $HOME/.ssh ]; then
-  chmod 700 $HOME/.ssh
-fi
-# ed
-if [ ! -f $HOME/.ssh/id_ed25519 ]; then
-  ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519
-fi
-# RSA
-# if [ ! -f $HOME/.ssh/id_rsa ]; then
-#   #ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_rsa
-# fi
-if [ ! -f $HOME/.ssh/authorized_keys ]; then
-  cp $DOTFILES/authorized_keys $HOME/.ssh/authorized_keys
-fi
-
-
-####################
-# private
-####################
-cd $DOTFILES
-git clone git@github.com:zamicol/private.git
-cd private
-git pull
-cd $DOTFILES
 
 ###############
 # Quicktile
