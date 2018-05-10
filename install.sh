@@ -446,3 +446,6 @@ fi
 # Link all setting files
 ln -s $DOTFILES/private/visual_studio_code/User/* $HOME/.config/Code/User/
 
+
+# Sync
+s
