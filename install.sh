@@ -446,14 +446,3 @@ fi
 # Link all setting files
 ln -s $DOTFILES/private/visual_studio_code/User/* $HOME/.config/Code/User/
 
-
-
-#######################
-# Projects
-######################
-cd $ZAMICOL
-git clone git@github.com:zamicol/cypherpass.git
-git clone git@github.com:zamicol/cypherwallet.git
-git clone git@github.com:zamicol/jsonflags.git
-git clone git@github.com:zamicol/style.git
-git clone git@github.com:zamicol/tool.git
