@@ -73,7 +73,7 @@ REPOS="ppa:webupd8team/atom ppa:gezakovacs/ppa"
 ####################
 # Package Variables
 ####################
-# Core Packages 
+# Core Packages
 # Some of these are needed for this script,
 PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 
