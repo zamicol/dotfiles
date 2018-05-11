@@ -11,4 +11,4 @@
 	cookiefile = /home/z/.gitcookies
 	sslverify = true
 [core]
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = /home/z/.dotfiles/gitignore_global
