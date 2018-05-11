@@ -251,7 +251,7 @@ exec --no-startup-id blueman-applet
 ####################
 # App bindings
 ####################
-bindsym $mod+c exec google-chrome
+bindsym $mod+c exec google-chrome-stable
 bindsym $mod+Control+c exec chromium-browser
 bindsym $mod+Control+f exec firefox
 bindsym $mod+o exec gnome-calculator

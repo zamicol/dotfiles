@@ -105,7 +105,7 @@ PACKAGES="$PACKAGES i3 dmenu i3status i3block i3lock feh sysstat lxappearance xb
 PACKAGES="$PACKAGES caja-share"
 
 # Dev packages
-PACKAGES="$PACKAGES atom"
+PACKAGES="$PACKAGES atom make"
 
 # QuickTile packages
 # PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
@@ -266,7 +266,7 @@ git config --global core.excludesfile "$DOTFILES/gitignore_global"
 # i3
 ####################
 # Remove default config and link to dotfile config
-rm $HOME/.i3/config
+rm $HOME/.config/i3/config
 ln -s $DOTFILES/i3/config $HOME/.config/i3/config
 
 # i3status and i3block
@@ -275,9 +275,10 @@ ln -s $DOTFILES/i3/config $HOME/.config/i3/config
 # https://vivien.github.io/i3blocks/
 ln -s $DOTFILES/i3/i3status.conf $HOME/.config/i3status/config
 ln -s $DOTFILES/i3/i3blocks.conf $HOME/.config/i3blocks/config
-# i3blocks
-git clone git://github.com/vivien/i3blocks $HOME/dev/i3blocks
-(cd $HOME/dev/i3blocks/ && make clean debug && sudo make install)
+# i3blocks manual install
+## NOTE: curently insalling using package in repo. 
+# git clone git://github.com/vivien/i3blocks $HOME/dev/i3blocks
+# (cd $HOME/dev/i3blocks && make clean debug && sudo make install)
 
 
 
