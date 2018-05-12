@@ -458,5 +458,13 @@ fi
 ln -s $DOTFILES/private/visual_studio_code/User/* $HOME/.config/Code/User/
 
 
+##############
+# dotfiles
+############
+
+# Set config to ssh and not https
+rm $DOTFILES/.git/config
+ln -s $DOTFILES/dotfiles_git_config $DOTFILES/.git/config
+
 # Sync
 s

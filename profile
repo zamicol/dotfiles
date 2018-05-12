@@ -1,4 +1,4 @@
-# putting everything important now in .bashrc
+# putting everything important in .bashrc
 
 . ~/.dotfiles/private/profile
 
