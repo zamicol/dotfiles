@@ -213,8 +213,8 @@ Updated at:$fileDate   Next update: $tiggerDate  Now:$currentDate
 Time to update: $(($fileDate-$tiggerDate))
 "
 
-if [  $fileDate -le $tiggerDate ];
-then
+#if [  $fileDate -le $tiggerDate ];
+#then
   printf "Updating\n"
   # Update
   # packages that are now available with additional repos
@@ -249,10 +249,10 @@ then
     # Do this last, after updating, installing, removing.
     sudo apt-get -y upgrade
 
-  else
-    printf "Update occured within last 10 minutes.
-**NOT** updating, installing, or upgrading\n\n"
-fi
+#  else
+#    printf "Update occured within last 10 minutes.
+#**NOT** updating, installing, or upgrading\n\n"
+#fi
 
 
 
