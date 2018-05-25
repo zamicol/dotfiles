@@ -81,7 +81,17 @@ PACKAGES="git vim curl openssh-server lynx htop tmux ncdu secure-delete"
 # `dconf-tools` is for system config editing.  The package installs `dconf-editor`
 # `numlockx` is for foolproof turning on numlock.
 # `pavucontrol` is awesome for sound management.
-PACKAGES="$PACKAGES chromium-browser gparted xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol unetbootin"
+PACKAGES="$PACKAGES chromium gparted xclip numlockx dconf-tools dconf-tools nodejs synaptic gnome-calculator pavucontrol"
+#unetbootin
+
+
+###################
+# Debian
+##################
+# Packages missing in Debian that are commonly in dirivatives
+# software-properties-common allows apt-add-repository
+# apt-transport-https is for some repos.  
+PACKAGES="$PACKAGES software-properties-common apt-transport-https"
 
 # Desktop Applications
 PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop gimp"
@@ -98,14 +108,15 @@ PACKAGES="$PACKAGES bluetooth blueman pulseaudio-module-bluetooth gnome-sound-re
 # `compton` is compositing manager
 # `xbacklight` controls display's backlight.
 # `arandr` is a gui for xrandr
-PACKAGES="$PACKAGES i3 dmenu i3status i3block i3lock feh sysstat lxappearance xbacklight compton arandr"
+PACKAGES="$PACKAGES i3 dmenu i3status i3blocks i3lock feh sysstat lxappearance xbacklight compton arandr"
 
 # MATE
 # caja-share is for smb gui sharing.
 PACKAGES="$PACKAGES caja-share"
 
 # Dev packages
-PACKAGES="$PACKAGES atom make"
+PACKAGES="$PACKAGES  make"
+# atom
 
 # QuickTile packages
 # PACKAGES="$PACKAGES python python-gtk2 python-xlib python-dbus python-wnck"
@@ -119,7 +130,7 @@ REMOVEPACKAGES="thunderbird"
 # Symlink from dotfiles to home.
 # Will not overwrite existing
 # Files with be prepended with a dot.
-SYMLINKS="bashrc bash_aliases bash_aliases_private xsession profile profile_private xinitrc gitconfig fonts"
+SYMLINKS="bashrc bash_aliases xsession profile xinitrc gitconfig fonts"
 # Create these dirs if not exist.
 DIRS="$HOME/dev/go $HOME/.config/i3 $HOME/.ssh $HOME/.config/i3status \
 $HOME/.config/i3blocks $DOTFILES/fonts $HOME/dev/go/src/github.com/zamicol"
@@ -232,7 +243,13 @@ Time to update: $(($fileDate-$tiggerDate))
     if [ -e /etc/redhat-release ]; then
       sudo yum install $PACKAGES
     else
-      sudo apt-get -y --ignore-missing install $PACKAGES
+    if sudo apt-get -y --ignore-missing install $PACKAGES ; then
+    echo "Installed packages sucessfully."
+else
+echo "Unable to install.  Fix your packages and rerun."
+    exit
+fi
+      
     fi
     ;;
     *)
@@ -467,4 +484,4 @@ rm $DOTFILES/.git/config
 ln -s $DOTFILES/dotfiles_git_config $DOTFILES/.git/config
 
 # Sync
-s
+# s

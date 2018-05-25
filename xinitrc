@@ -2,7 +2,7 @@
 # This file is sourced when running startx and
 #    other programs calling xinit
 
-xmodmap $HOME/.dotfiles/xmodmap 2>/dev/null
+xmodmap ~/.dotfiles/xmodmap 2>/dev/null
 synclient CoastingSpeed=0 2>/dev/null
 synclient VertEdgeScroll=0 2>/dev/null
 synclient HorizEdgeScroll=0 2>/dev/null

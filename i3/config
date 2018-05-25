@@ -227,12 +227,21 @@ exec ~/.dotfiles/dock.sh
 exec --no-startup-id mate-screensaver
 bindsym $mod+Control+l exec mate-screensaver-command -l
 
+########################
+# Startup
+########################
+
+
 # Compton for compositing
+# -b is for process deamonization.  
 exec --no-startup-id compton --config ~/.dotfiles/compton.conf -b
 
 # Desktop background wallpaper.
 # Sleep first so monitor setting have a chance to take affect first.
 exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/img/rawson_lake_4097_2969.jpg
+
+# cap to control
+exec --no-startup-id bash ~/.xinitrc
 
 ####################
 # Applets and Icons
@@ -253,7 +262,7 @@ exec --no-startup-id blueman-applet
 ####################
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+Control+c exec chromium-browser
-bindsym $mod+Control+f exec firefox
+bindsym $mod+Control+f exec firefoxFSTARTUP
 bindsym $mod+o exec gnome-calculator
 bindsym $mod+m exec atom
 bindsym $mod+b exec code

@@ -32,7 +32,7 @@ alias zgo="cd ~/dev/go/src/github.com/zamicol"
 #
 #    echo -n 'bob' | sha
 #
-# don't forget the newline in echo.  Use "-n"
+# Don't forget the newline in echo.  Use "-n"
 alias sha256="sha256sum"
 alias sha="sha256sum"
 alias sha64=sha64func
