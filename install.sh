@@ -108,7 +108,14 @@ PACKAGES="$PACKAGES bluetooth blueman pulseaudio-module-bluetooth gnome-sound-re
 # `compton` is compositing manager
 # `xbacklight` controls display's backlight.
 # `arandr` is a gui for xrandr
+
 PACKAGES="$PACKAGES i3 dmenu i3status i3blocks i3lock feh sysstat lxappearance xbacklight compton arandr"
+
+# i3bar
+# `fonts-font-awesome` is for the i3blocks battery2
+# `yad xdotool` are for calendar
+PACKAGES="$PACKAGES fonts-font-awesome yad xdotool"
+
 
 # MATE
 # caja-share is for smb gui sharing.

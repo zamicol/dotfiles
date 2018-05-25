@@ -174,7 +174,7 @@ client.background       #ffffff
 # finds out, if available)
 bar {
   #status_command i3status
-  status_command SCRIPT_DIR=/usr/local/libexec/i3blocks i3blocks
+  status_command SCRIPT_DIR=~/.dotfiles/i3/i3blocks i3blocks
   font pango:System San Francisco Display, FontAwesome 9
   position top
   tray_output primary
@@ -199,6 +199,9 @@ bar {
     #statusline #10ABE1
   }
 }
+
+# calendar i3bar floating
+# for_window [class="Yad"] floating enable
 
 
 
