@@ -13,10 +13,6 @@ fi
 #
 # See private/profile for more.
 #
-# Go
-# Might be duplicate from elsewhere to guarantee running
-export GOPATH=$HOME/dev/go
-export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
 # No sudo on node npm.
 # https://github.com/qbit/node_bin
