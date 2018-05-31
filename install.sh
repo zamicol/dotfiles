@@ -97,7 +97,8 @@ PACKAGES="$PACKAGES software-properties-common apt-transport-https"
 PACKAGES="$PACKAGES inkscape vlc gtk-recordmydesktop gimp"
 
 # Audio
-PACKAGES="$PACKAGES bluetooth blueman pulseaudio-module-bluetooth gnome-sound-recorder"
+# pnmixer is the applet toolbar icon mixer.  Works with pavucontrol
+PACKAGES="$PACKAGES bluetooth blueman pulseaudio-module-bluetooth gnome-sound-recorder pnmixer"
 
 # i3wm
 # and desktop environment
@@ -252,7 +253,7 @@ Time to update: $(($fileDate-$tiggerDate))
     else
     if sudo apt-get -y --ignore-missing install $PACKAGES ; then
     echo "Installed packages sucessfully."
-else
+elsea
 echo "Unable to install.  Fix your packages and rerun."
     exit
 fi

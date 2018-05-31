@@ -244,7 +244,9 @@ exec --no-startup-id compton --config ~/.dotfiles/compton.conf -b
 exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/img/rawson_lake_4097_2969.jpg
 
 # cap to control
-exec --no-startup-id bash ~/.xinitrc
+# crazy bug.  Won't execute without print statement.  
+exec printf "xinitrc";bash ~/.xinitrc
+
 
 ####################
 # Applets and Icons
@@ -252,10 +254,15 @@ exec --no-startup-id bash ~/.xinitrc
 # wifi icon
 exec --no-startup-id nm-applet
 # Sound icon
-# Example: exec --no-startup-id mate-volume-control-applet
-# Supposidly remove the --no-startup-id for it to appear on all workspaces
-# but doesn't seem to work.
-exec mate-volume-control-applet
+
+# mate mixer
+#exec mate-volume-control-applet
+
+# pnmixer wich also provides menu to launch pavucontrol for pulse.  
+exec --no-startup-id pnmixer
+
+
+
 # bluetooth
 exec --no-startup-id blueman-applet
 
