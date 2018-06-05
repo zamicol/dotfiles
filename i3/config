@@ -215,10 +215,17 @@ bindsym $mod+Control+Left workspace prev_on_output
 #bindsym $mod+Control+Alt+Right move container to workspace next_on_output
 
 # Sound
-# Volume controls
-bindsym $mod+slash exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB+
-bindsym $mod+period exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB-
-bindsym $mod+comma exec amixer -D pulse set Master 1+ toggle
+# Volume controls (audio)
+# alsa
+# bindsym $mod+slash exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB+
+# bindsym $mod+period exec amixer -D pulse set Master 1+ unmute && amixer set Master 2dB-
+# bindsym $mod+comma exec amixer -D pulse set Master 1+ toggle
+#
+#
+# pulse
+bindsym $mod+slash exec pactl set-sink-volume 0 +10%
+bindsym $mod+period exec pactl set-sink-volume 0 -10%
+bindsym $mod+comma exec pactl set-sink-volume 0 0
 
 # Dock Settings
 # For example, put monitor settings in here.
@@ -245,7 +252,11 @@ exec --no-startup-id sleep 2 && feh --bg-scale ~/.dotfiles/img/rawson_lake_4097_
 
 # cap to control
 # crazy bug.  Won't execute without print statement.  
-exec printf "xinitrc";bash ~/.xinitrc
+exec bash ~/.xinitrc
+
+exec sh ~/.xinitrc
+
+exec mate-terminal
 
 
 ####################
