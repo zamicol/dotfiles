@@ -229,7 +229,7 @@ bindsym $mod+comma exec pactl set-sink-volume 0 0
 
 # Dock Settings
 # For example, put monitor settings in here.
-exec ~/.dotfiles/dock.sh
+exec --no-startup-id ~/.dotfiles/private/dock.sh
 
 # Screen lock
 # can also use i3lock
