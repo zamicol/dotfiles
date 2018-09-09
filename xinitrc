@@ -16,3 +16,5 @@ xset r rate 250 60
 
 # Always turn on numblock.  `numlockx` must be installed.  
 numlockx
+
+. ~/.dotfiles/private/dock
