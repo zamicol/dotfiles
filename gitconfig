@@ -1,5 +1,5 @@
 [user]
-	name = Zach Collier
+	name = Zamicol
 	email = zamicol@gmail.com
 [credential]
 	helper = cache --timeout=360000
@@ -11,4 +11,4 @@
 	cookiefile = /home/z/.gitcookies
 	sslverify = true
 [core]
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = /home/z/.dotfiles/gitignore_global
