@@ -1,1 +1,4 @@
-/home/z/.dotfiles/private/install.sh
+#!/bin/sh
+
+
+/bin/sh $DOTFILES/private/install.sh
