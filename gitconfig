@@ -12,3 +12,5 @@
 	sslverify = true
 [core]
 	excludesfile = ~/.dotfiles/gitignore_global
+[url "ssh://git@gitlab.com/"]
+	insteadOf = https://gitlab.com/
