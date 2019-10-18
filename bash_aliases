@@ -38,6 +38,7 @@ alias sha="sha256sum"
 alias sha64=sha64func
 alias esha64=esha64func
 alias esha=esha64func
+alias usha=usha64func
 
 ################
 # Applications
@@ -106,6 +107,25 @@ sha64func(){
 esha64func(){
  echo -n "$1" | sha64func
 }
+
+
+###################
+# base64url
+###################
+# echo for new line
+sha64urlfunc(){
+ sha $1 | awk '{print $1}'| xxd -r -p | openssl enc -a -A | tr -d '=' | tr '/+' '_-' && echo
+}
+
+# ushafunc is for "echo" sha 64 and aliased to "usha".
+usha64func(){
+ echo -n "$1" | sha64urlfunc
+}
+
+
+
+
+
 
 # Unzip using `x <filename>`
 # http://superuser.com/a/44187
