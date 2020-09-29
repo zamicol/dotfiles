@@ -55,6 +55,7 @@ untar tar.gz
     tar -C <location> -xzf <tar>
 
 ## USB ISO image disk gui ##
+# Startupdiskcreator disk burner usb burner
 
     sudo gnome-disks
     mintstick -m iso
