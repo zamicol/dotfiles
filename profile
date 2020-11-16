@@ -20,6 +20,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-#go
+#  go, also in .profile
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
