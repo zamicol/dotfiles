@@ -18,4 +18,5 @@ xset r rate 250 60
 numlockx
 
 # Set up monitors
- . ~/.dotfiles/private/dock
+# put in private/i3/config instead
+# . ~/.dotfiles/private/dock
