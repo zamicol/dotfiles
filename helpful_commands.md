@@ -1,5 +1,8 @@
 # Git Based System Auxiliary Memory for Biological Analog Interface #
 
+This is NOT located here: https://gist.github.com/zamicol/50d6b3594cb191139b043418ec0c4072
+even though I keep looking for a gist.  
+
 # sh #
 
 [Rich’s sh (POSIX shell) tricks](http://www.etalabs.net/sh_tricks.html)
