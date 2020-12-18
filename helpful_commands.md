@@ -73,6 +73,9 @@ root's cron:
 
 ## Files ##
 ### Add a line if it doesn't already exist ###
-LINE='example line'
-FILE=file.txt
-grep -q "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
+    LINE='example line'
+    FILE=file.txt
+    grep -q "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
+
+Find UUID of a swap file:
+    findmnt -no SOURCE,UUID -T /swapfile
