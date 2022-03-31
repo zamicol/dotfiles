@@ -1,4 +1,6 @@
-# bash_aliases.sh
+# bash_aliases
+
+# source $DOTFILES/bash_aliases
 
 ################
 # Aliases
@@ -13,7 +15,7 @@ alias zsr="sudo shutdown -r now"
 alias zinstall=". ~/.dotfiles/install.sh"
 alias zup="sudo apt-get update && sudo apt-get -y upgrade && sudo apt autoremove -y"
 alias a="sudo apt-get install -y "
-alias zsleep="mate-screensaver-command -l; echo 'sleeping'; ssystemctl suspend"
+alias zsleep="mate-screensaver-command -l; echo 'sleeping'; systemctl suspend"
 alias zsleeps="mate-screensaver-command -l; s; echo 'sleeping'; sudo pm-suspend"
 alias zhib="mate-screensaver-command -l; echo 'hibernating'; sudo systemctl hibernate"
 alias zhibs="mate-screensaver-command -l; s; echo 'hibernating'; sudo systemctl hibernate"
@@ -21,9 +23,12 @@ alias zhibs="mate-screensaver-command -l; s; echo 'hibernating'; sudo systemctl 
 # shred -vfz ~/
 # shred -vfz /
 # shred -vfz -n 10 /dev/sda
-alias zdiez="echo 'Goodbye beautiful universe!'; sudo echo 'I love you!'"
+alias zdiez="echo 'Goodbye beautiful universe!'; sudo shred -vfz ~/; sudo shutdown -h"
 # Dev
 alias zgo="cd ~/dev/go/src/github.com/zamicol"
+alias jared="git pull origin jared"
+alias jared_test="git pull origin jared_test"
+alias zach='git status && git add . && git status'
 
 ################
 # Crypto

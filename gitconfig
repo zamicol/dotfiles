@@ -8,7 +8,7 @@
 [push]
 	default = simple
 [http]
-	cookiefile = /home/z/.gitcookies
+	cookiefile = /home/z/.dotfiles/gitcookies
 	sslverify = true
 [core]
 	excludesfile = ~/.dotfiles/gitignore_global

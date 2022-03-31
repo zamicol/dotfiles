@@ -23,3 +23,4 @@ fi
 #  go, also in .profile
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
+
