@@ -24,4 +24,4 @@ fi
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 export GOPRIVATE=$GOPATH/src/github.com/zamicol/gitversion:$GOPATH/src/github.com/cyphrme/*
-
+export GO111MODULE=on
