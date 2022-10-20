@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo 'Starting bluetooth connect script'
+pactl load-module module-bluetooth-discover
+bt-audio -c 00:17:E9:DB:0A:CC 
+pacmd set-default-sink 1 & pacmd move-sink-input 0 1

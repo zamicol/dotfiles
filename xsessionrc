@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# See https://wiki.debian.org/Xsession 
+# This file is very first.   
+
+
+. ~/.xsession

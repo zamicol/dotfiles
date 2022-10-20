@@ -1,0 +1,22 @@
+[user]
+	name = Zamicol
+	email = zamicol@gmail.com
+[credential]
+	helper = cache --timeout=360000
+[url "https://"]
+	insteadOf = git://
+[push]
+	default = simple
+[http]
+	cookiefile = /home/z/.dotfiles/gitcookies
+	sslverify = true
+[core]
+	excludesfile = /home/z/.dotfiles/gitignore_global
+[url "ssh://git@gitlab.com/"]
+	insteadOf = https://gitlab.com/
+[pull]
+	rebase = false
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[init]
+	defaultBranch = master
