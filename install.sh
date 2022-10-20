@@ -14,13 +14,16 @@ if [ ! -d $HOME/.ssh ]; then
 fi
 # ed
 if [ ! -f $HOME/.ssh/id_ed25519 ]; then
+	# ssh-keygen -t ed25519
   ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519
-echo "Created new key.  Add key to git repo and then continue script"
+echo "Created new key.  Add key to git repo and rerun script"
 cat ~/.ssh/id_ed25519.pub
-exit 1
+return
 fi
 
-/bin/sh $DOTFILES/private/install.sh
+git clone git@github.com:zamicol/private.git
+cd $/.dotfiles/private
+
+/bin/sh $/.dotfiles/private/install.sh
 
 
-# ssh-keygen -t ed25519
