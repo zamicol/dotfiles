@@ -22,8 +22,8 @@ return
 fi
 
 git clone git@github.com:zamicol/private.git
-cd $/.dotfiles/private
+cd ~/.dotfiles/private
 
-/bin/sh $/.dotfiles/private/install.sh
+/bin/sh ~/.dotfiles/private/install.sh
 
 
