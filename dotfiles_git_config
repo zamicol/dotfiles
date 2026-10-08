@@ -1,2 +1,7 @@
 [branch "master"]
 	vscode-merge-base = origin/master
+	remote = origin
+	merge = refs/heads/master
+[remote "origin"]
+	url = git@github.com:zamicol/dotfiles.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
