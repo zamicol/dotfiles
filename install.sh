@@ -38,3 +38,11 @@ if ! "$HOME/.local/go/bin/go" version 2>/dev/null | grep -q "$version "; then
 	tar -C "$HOME/.local" -xzf "/tmp/${version}.linux-amd64.tar.gz"
 	rm -f "/tmp/${version}.linux-amd64.tar.gz"
 fi
+
+# Grok. https://x.ai/cli/install.sh
+if [ ! -x "$HOME/.grok/bin/grok" ]; then
+	echo "Installing Grok"
+	curl -fsSL https://x.ai/cli/install.sh | bash
+else
+	echo "Grok already installed"
+fi
