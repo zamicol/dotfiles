@@ -20,9 +20,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-#  go, also in .profile
+# Go
 export GOPATH=$HOME/dev/go
 export GOBIN=$HOME/dev/go/bin
-export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
-export GOPRIVATE=$GOPATH/src/github.com/zamicol/gitversion:$GOPATH/src/github.com/cyphrme/*
-export GO111MODULE=on
+export PATH=$GOPATH/bin:$HOME/.local/go/bin:/usr/local/go/bin:$PATH
+export GOPRIVATE="github.com/zamicol/gitversion,github.com/cyphrme/*"

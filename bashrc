@@ -6,6 +6,7 @@ fi
 if [ -f ~/.dotfiles/private/profile ]; then
     . ~/.dotfiles/private/profile
 fi
+export PATH="$HOME/.local/go/bin:$PATH"
 
 ########
 # Environmental Variables
@@ -19,22 +20,14 @@ fi
 # then use `npm install --prefix ~/dev/node_bin <package>`
 export PATH=$PATH:~/dev/node_bin/node_modules/.bin
 
-export EDITOR=/usr/bin/vim
-
 # Set default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-# Explicitly set prompt
-export PS1='\u@\H:\w$'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-# xinitrc
-sh $HOME/.dotfiles/xinitrc
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -45,6 +38,9 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
+# xinitrc
+sh "$HOME/.dotfiles/xinitrc"
 
 
 # Stop gawd darn escaping "$" on tab complete.  
@@ -148,6 +144,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
