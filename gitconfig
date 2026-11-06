@@ -8,10 +8,10 @@
 [push]
 	default = simple
 [http]
-	cookiefile = /home/z/.dotfiles/gitcookies
+	cookiefile = ~/.dotfiles/gitcookies
 	sslverify = true
 [core]
-	excludesfile = /home/z/.dotfiles/gitignore_global
+	excludesfile = ~/.dotfiles/gitignore_global
 [url "ssh://git@gitlab.com/"]
 	insteadOf = https://gitlab.com/
 [pull]

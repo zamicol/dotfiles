@@ -12,12 +12,15 @@ echo "Setting up ssh"
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
 # ed
-if [ ! -f $HOME/.ssh/id_ed25519 ]; then
-	# ssh-keygen -t ed25519
-  ssh-keygen -t ed25519 -N "" -f $HOME/.ssh/id_ed25519
-echo "Created new key.  Add key to git repo and rerun script"
-cat ~/.ssh/id_ed25519.pub
-return
+if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
+	ssh-keygen -t ed25519 -N "" -f "$HOME/.ssh/id_ed25519"
+	echo "Created new key.  Add key to git repo and rerun script"
+	cat "$HOME/.ssh/id_ed25519.pub"
+	# `return` when sourced, `exit` when this file is executed.
+	if [ "${0##*/}" = "install.sh" ]; then
+		exit 0
+	fi
+	return 0
 fi
 
 if [ ! -d "$HOME/.dotfiles/private/.git" ]; then

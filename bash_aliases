@@ -23,7 +23,7 @@ alias zhibs="mate-screensaver-command -l; s; echo 'hibernating'; sudo systemctl 
 # shred -vfz ~/
 # shred -vfz /
 # shred -vfz -n 10 /dev/sda
-alias zdiez="echo 'Goodbye beautiful universe!'; sudo shred -vfz ~/; sudo shutdown -h"
+alias zdiez="echo 'Goodbye beautiful universe!'; sudo find ~ -xdev -type f -exec shred -vfz -- {} +; sudo shutdown -h now"
 
 ################
 # Crypto
@@ -47,7 +47,6 @@ alias s=". ~/.dotfiles/private/sync.sh"
 alias zsync=". ~/.dotfiles/private/sync.sh"
 alias dock=". ~/.dotfiles/private/dock.sh"
 alias undock=". ~/.dotfiles/private/undock.sh"
-alias node="nodejs"
 alias b="xbacklight -set"
 alias extract="x"
 # get xclip working
@@ -80,7 +79,7 @@ alias gitp=gitpp
 # Old ls:
 # alias l='ls -alF'
 listWithCount() {
- ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[d|\-]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^\-/) {f+=1} print $0} END {print "Files:"f " Dirs:"d " Nodes:"i  }'
+ ls -alF --color=always | awk 'BEGIN {i=-2;f=0;d=-2} {if ($0 ~/^[-d]/) {i+=1} if ($0 ~/^d/) {d+=1} if ($0 ~/^-/) {f+=1} print $0} END {print "Files:"f " Dirs:"d " Nodes:"i  }'
 }
 
 # sha64func is a one liner for getting the sha256 sum as base64.
@@ -129,19 +128,19 @@ usha64func(){
 # Unzip using `x <filename>`
 # http://superuser.com/a/44187
 x(){
- if [ -f $1 ] ; then
-  case $1 in
-   *.tar.bz2)   tar xvjf $1    ;;
-   *.tar.gz)    tar xvzf $1    ;;
-   *.bz2)       bunzip2 $1     ;;
-   *.rar)       unrar x $1     ;;
-   *.gz)        gunzip $1      ;;
-   *.tar)       tar xvf $1     ;;
-   *.tbz2)      tar xvjf $1    ;;
-   *.tgz)       tar xvzf $1    ;;
-   *.zip)       unzip $1       ;;
-   *.Z)         uncompress $1  ;;
-   *.7z)        7z x $1        ;;
+ if [ -f "$1" ] ; then
+  case "$1" in
+   *.tar.bz2)   tar xvjf "$1"    ;;
+   *.tar.gz)    tar xvzf "$1"    ;;
+   *.bz2)       bunzip2 "$1"     ;;
+   *.rar)       unrar x "$1"     ;;
+   *.gz)        gunzip "$1"      ;;
+   *.tar)       tar xvf "$1"     ;;
+   *.tbz2)      tar xvjf "$1"    ;;
+   *.tgz)       tar xvzf "$1"    ;;
+   *.zip)       unzip "$1"       ;;
+   *.Z)         uncompress "$1"  ;;
+   *.7z)        7z x "$1"        ;;
    *)           echo "Unable to extract '$1'" ;;
   esac
  else

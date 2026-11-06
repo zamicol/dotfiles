@@ -15,11 +15,6 @@ export PATH="$HOME/.local/go/bin:$PATH"
 # See private/profile for more.
 #
 
-# No sudo on node npm.
-# https://github.com/qbit/node_bin
-# then use `npm install --prefix ~/dev/node_bin <package>`
-export PATH=$PATH:~/dev/node_bin/node_modules/.bin
-
 # Set default editor.
 export VISUAL=vim
 export EDITOR="$VISUAL"
